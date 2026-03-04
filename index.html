@@ -2,49 +2,170 @@
 <html lang="nl">
 <head>
 <meta charset="UTF-8">
-<title>Rubik's Cube Shuffle Animation</title>
+<title>Rubik's Cube</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+<input type="radio" name="step" id="sA" checked>
+<input type="radio" name="step" id="sB">
+<input type="radio" name="step" id="sC">
+<input type="radio" name="step" id="sD">
+
 <div id="scene">
-  <div id="cube">
-    <!-- 27 cubies -->
-    <!-- elke cubie heeft 6 faces -->
-    <!-- top layer (cubies 1-9), middle layer (10-18), bottom layer (19-27) -->
-    <!-- we gebruiken classes per layer voor animatie -->
-    <!-- cubies blijven individueel, animatie beweegt ze als lagen -->
-    
-    <div class="cubie layer-top"><div></div><div></div><div></div><div></div><div></div><div></div></div>
-    <div class="cubie layer-top"><div></div><div></div><div></div><div></div><div></div><div></div></div>
-    <div class="cubie layer-top"><div></div><div></div><div></div><div></div><div></div><div></div></div>
-    <div class="cubie layer-top"><div></div><div></div><div></div><div></div><div></div><div></div></div>
-    <div class="cubie layer-top"><div></div><div></div><div></div><div></div><div></div><div></div></div>
-    <div class="cubie layer-top"><div></div><div></div><div></div><div></div><div></div><div></div></div>
-    <div class="cubie layer-top"><div></div><div></div><div></div><div></div><div></div><div></div></div>
-    <div class="cubie layer-top"><div></div><div></div><div></div><div></div><div></div><div></div></div>
-    <div class="cubie layer-top"><div></div><div></div><div></div><div></div><div></div><div></div></div>
-    
-    <div class="cubie layer-middle"><div></div><div></div><div></div><div></div><div></div><div></div></div>
-    <div class="cubie layer-middle"><div></div><div></div><div></div><div></div><div></div><div></div></div>
-    <div class="cubie layer-middle"><div></div><div></div><div></div><div></div><div></div><div></div></div>
-    <div class="cubie layer-middle"><div></div><div></div><div></div><div></div><div></div><div></div></div>
-    <div class="cubie layer-middle"><div></div><div></div><div></div><div></div><div></div><div></div></div>
-    <div class="cubie layer-middle"><div></div><div></div><div></div><div></div><div></div><div></div></div>
-    <div class="cubie layer-middle"><div></div><div></div><div></div><div></div><div></div><div></div></div>
-    <div class="cubie layer-middle"><div></div><div></div><div></div><div></div><div></div><div></div></div>
-    <div class="cubie layer-middle"><div></div><div></div><div></div><div></div><div></div><div></div></div>
 
-    <div class="cubie layer-bottom"><div></div><div></div><div></div><div></div><div></div><div></div></div>
-    <div class="cubie layer-bottom"><div></div><div></div><div></div><div></div><div></div><div></div></div>
-    <div class="cubie layer-bottom"><div></div><div></div><div></div><div></div><div></div><div></div></div>
-    <div class="cubie layer-bottom"><div></div><div></div><div></div><div></div><div></div><div></div></div>
-    <div class="cubie layer-bottom"><div></div><div></div><div></div><div></div><div></div><div></div></div>
-    <div class="cubie layer-bottom"><div></div><div></div><div></div><div></div><div></div><div></div></div>
-    <div class="cubie layer-bottom"><div></div><div></div><div></div><div></div><div></div><div></div></div>
-    <div class="cubie layer-bottom"><div></div><div></div><div></div><div></div><div></div><div></div></div>
-    <div class="cubie layer-bottom"><div></div><div></div><div></div><div></div><div></div><div></div></div>
-
+  <div id="cubeState_A">
+    <div class="layer top">
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    </div>
+    <div class="layer mid">
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    </div>
+    <div class="layer bot">
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    </div>
   </div>
+
+  <div id="cubeState_B">
+    <div class="layer top">
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    </div>
+    <div class="layer mid">
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    </div>
+    <div class="layer bot">
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    </div>
+  </div>
+
+  <div id="cubeState_C">
+    <div class="layer top">
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    </div>
+    <div class="layer mid">
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    </div>
+    <div class="layer bot">
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    </div>
+  </div>
+
+  <div id="cubeState_D">
+    <div class="layer top">
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    </div>
+    <div class="layer mid">
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    </div>
+    <div class="layer bot">
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    </div>
+  </div>
+
 </div>
+
+<div id="controls">
+  <label for="sA">A</label>
+  <label for="sB">B</label>
+  <label for="sC">C</label>
+  <label for="sD">D</label>
+</div>
+
 </body>
 </html>

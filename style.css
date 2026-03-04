@@ -1,165 +1,190 @@
 /* ===== RESET / SCENE ===== */
-body{
-  margin:0;
-  height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:#222;
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #222;
 }
 
-#scene{
-  width:300px;
-  height:300px;
-  perspective:1000px;
-  overflow:visible;
+input[type="radio"] { display: none; }
+
+#scene {
+  width: 300px;
+  height: 300px;
+  perspective: 1000px;
+  overflow: visible;
 }
 
-/* ===== CUBE ===== */
-#cube{
-  position:relative;
-  width:0;
-  height:0;
-  transform-style:preserve-3d;
-  transform:rotateX(-30deg) rotateY(30deg);
+/* ===== CUBE STATES — verborgen standaard ===== */
+#cubeState_A,
+#cubeState_B,
+#cubeState_C,
+#cubeState_D {
+  display: none;
+  position: relative;
+  width: 0;
+  height: 0;
+  transform-style: preserve-3d;
+  transform: rotateX(-30deg) rotateY(30deg);
 }
 
-/* ===== CUBIES ===== */
-#cube > div{
-  position:absolute;
-  width:60px;
-  height:60px;
-  transform-style:preserve-3d;
-  transform:translate3d(var(--x),var(--y),var(--z));
+#sA:checked ~ #scene #cubeState_A { display: block; }
+#sB:checked ~ #scene #cubeState_B { display: block; }
+#sC:checked ~ #scene #cubeState_C { display: block; }
+#sD:checked ~ #scene #cubeState_D { display: block; }
+
+/* ===== LAYER WRAPPERS ===== */
+/* Elke layer is een 3D container op de juiste Y-positie */
+.layer {
+  position: absolute;
+  width: 0;
+  height: 0;
+  transform-style: preserve-3d;
 }
 
-/* ===== X POSITIES (kolommen) ===== */
-#cube > div:nth-child(3n+1){ --x:-70px; }
-#cube > div:nth-child(3n+2){ --x:0px; }
-#cube > div:nth-child(3n){   --x:70px; }
+.layer.top { transform: translateY(-70px); }
+.layer.mid { transform: translateY(  0px); }
+.layer.bot { transform: translateY( 70px); }
 
-/* ===== Z POSITIES (lagen van 9) ===== */
-#cube > div:nth-child(-n+9){ --z:70px; }   /* bovenste laag */
-#cube > div:nth-child(n+10):nth-child(-n+18){ --z:0px; }  /* middelste laag */
-#cube > div:nth-child(n+19):nth-child(-n+27){ --z:-70px; } /* onderste laag */
-
-/* ===== Y POSITIES (rijen binnen elke laag) ===== */
-#cube > div:nth-child(9n+1),
-#cube > div:nth-child(9n+2),
-#cube > div:nth-child(9n+3){
-  --y:-70px;
+/* ===== CUBIES (div binnen layer) ===== */
+.layer > div {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  transform-style: preserve-3d;
+  transform: translate3d(var(--x), 0px, var(--z));
 }
 
-#cube > div:nth-child(9n+4),
-#cube > div:nth-child(9n+5),
-#cube > div:nth-child(9n+6){
-  --y:0px;
-}
+/* X posities */
+.layer > div:nth-child(3n+1) { --x: -70px;}
+.layer > div:nth-child(3n+2) { --x:   0px; }
+.layer > div:nth-child(3n)   { --x:  70px; }
 
-#cube > div:nth-child(9n+7),
-#cube > div:nth-child(9n+8),
-#cube > div:nth-child(9n+9){
-  --y:70px;
-}
+/* Z posities */
+.layer > div:nth-child(-n+3)            { --z:  70px; } /* voorste rij  */
+.layer > div:nth-child(n+4):nth-child(-n+6) { --z:   0px; } /* middelste rij */
+.layer > div:nth-child(n+7)             { --z: -70px; } /* achterste rij */
 
 /* ===== FACES ===== */
-#cube > div > div{
-  position:absolute;
-  width:60px;
-  height:60px;
-  border:2px solid black;
-  backface-visibility:hidden;
+.layer > div > div {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border: 2px solid black;
+  backface-visibility: hidden;
 }
 
-/* FRONT */
-#cube > div > div:nth-child(1){
-  background:red;
-  transform:translateZ(30px);
-}
+.layer > div > div:nth-child(1) { background: red;    transform: translateZ(30px); }
+.layer > div > div:nth-child(2) { background: orange; transform: rotateY(180deg) translateZ(30px); }
+.layer > div > div:nth-child(3) { background: green;  transform: rotateY( 90deg) translateZ(30px); }
+.layer > div > div:nth-child(4) { background: blue;   transform: rotateY(-90deg) translateZ(30px); }
+.layer > div > div:nth-child(5) { background: white;  transform: rotateX( 90deg) translateZ(30px); }
+.layer > div > div:nth-child(6) { background: yellow; transform: rotateX(-90deg) translateZ(30px); }
 
-/* BACK */
-#cube > div > div:nth-child(2){
-  background:orange;
-  transform:rotateY(180deg) translateZ(30px);
-}
+/* STATE A */
+/* #cubeState_A .layer.top > div:nth-child(1) > div { --face1: red; --face2: orange; }
 
-/* RIGHT */
-#cube > div > div:nth-child(3){
-  background:green;
-  transform:rotateY(90deg) translateZ(30px);
-}
+.layer > div > div:nth-child(1) { background: var(--face1); }
+.layer > div > div:nth-child(2) { background: var(--face2); } */
+/* ===== ANIMATIE KEYFRAMES ===== */
 
-/* LEFT */
-#cube > div > div:nth-child(4){
-  background:blue;
-  transform:rotateY(-90deg) translateZ(30px);
-}
-
-/* TOP */
-#cube > div > div:nth-child(5){
-  background:white;
-  transform:rotateX(90deg) translateZ(30px);
-}
-
-/* BOTTOM */
-#cube > div > div:nth-child(6){
-  background:yellow;
-  transform:rotateX(-90deg) translateZ(30px);
-}
-
-/* ===== ANIMATIE BOVENSTE LAAG ===== */
-
+/* Bovenste laag draait om Y-as (U move) */
 @keyframes rotateTopLayer {
-  from {
-    transform: translate3d(var(--x), var(--y), var(--z)) rotateZ(0deg);
-  }
-  to {
-    transform: translate3d(var(--x), var(--y), var(--z)) rotateZ(180deg);
-  }
+  from { transform: translateY(-70px) rotateY(  0deg)}
+  to   { transform: translateY(-70px) rotateY(0deg); }
 }
 
+/* State B bovenste laag staat al gedraaid (eindpositie A) */
+/* Onderste laag draait om Y-as (U' move) */
 @keyframes rotateBottomLayer {
+  from { transform: translateY(70px) rotateY( 0deg); }
+  to   { transform: translateY(70px) rotateY(-90deg); }
+}
+
+/* Middelste laag draait om Z-as */
+@keyframes rotateMidLayer {
+  from { transform: translateY(0px) rotateY(  0deg); }
+  to   { transform: translateY(0px) rotateY(-90deg); }
+}
+
+@keyframes rotateLeftSlice {
   from {
-    transform: translate3d(var(--x), var(--y), var(--z)) rotateZ(0deg);
+    transform: translate3d(-70px, 0px, var(--z)) rotateX(0deg);
   }
   to {
-    transform: translate3d(var(--x), var(--y), var(--z)) rotateZ(-90deg);
+    transform: translate3d(-70px, 0px, var(--z)) rotateX(-90deg);
   }
 }
 
-@keyframes rotateColumn {
-  from {
-    transform: translate3d(var(--x), var(--y), var(--z)) rotateY(0deg);
-  }
-  to {
-    transform: translate3d(var(--x), var(--y), var(--z)) rotateY(90deg);
-  }
-}
-
-
-#cube > div:nth-child(-n+9) {
-  animation: rotateTopLayer 2s forwards;
-}
-
-#cube > div:nth-child(1),
-#cube > div:nth-child(2),
-#cube > div:nth-child(3),
-#cube > div:nth-child(10),
-#cube > div:nth-child(11),
-#cube > div:nth-child(12),
-#cube > div:nth-child(19),
-#cube > div:nth-child(20),
-#cube > div:nth-child(21) {
-  animation: rotateColumn 2s 2s forwards;
-}
-
-#cube > div:nth-child(n+18) {
-  animation: rotateBottomLayer 2s 4s forwards;
-}
-
-
-/* ===== ANIMATIE HELE CUBE ===== */
 @keyframes spinCube {
-  from { transform: rotateX(-30deg) rotateY(0deg); }
+  from { transform: rotateX(-30deg) rotateY(  0deg); }
   to   { transform: rotateX(-30deg) rotateY(360deg); }
+}
+
+
+/* ===== STATE A — bovenste laag draait ===== */
+#sA:checked ~ #scene #cubeState_A .layer.top {
+  animation: rotateTopLayer 2s ease-in-out forwards;
+}
+
+/* ===== STATE B — bovenste laag in eindpositie A, middelste draait ===== */
+#sB:checked ~ #scene #cubeState_B .layer.top {
+  transform: translateY(-70px) rotateY(-90deg);
+}
+#sB:checked ~ #scene #cubeState_B .layer > div:nth-child(3n+1) {
+  animation: rotateLeftSlice 2s ease-in-out forwards;
+}
+
+/* ===== STATE C — onderste laag draait ===== */
+#sC:checked ~ #scene #cubeState_C .layer.top {
+  transform: translateY(-70px) rotateY(-90deg);
+}
+#sC:checked ~ #scene #cubeState_C .layer.mid {
+  transform: translateY(0px) rotateY(-90deg);
+}
+#sC:checked ~ #scene #cubeState_C .layer.bot {
+  animation: rotateBottomLayer 2s ease-in-out forwards;
+}
+
+/* ===== STATE D — hele kubus spint ===== */
+#sD:checked ~ #scene #cubeState_D {
+  animation: spinCube 3s linear infinite;
+}
+
+/* ===== CONTROLS ===== */
+#controls {
+  display: flex;
+  gap: 12px;
+  margin-top: 40px;
+}
+
+#controls > label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: #444;
+  color: #fff;
+  font-family: monospace;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 2px solid #666;
+  transition: background .15s, border-color .15s;
+}
+
+#controls > label:hover { background: #555; }
+
+#sA:checked ~ #controls label[for="sA"],
+#sB:checked ~ #controls label[for="sB"],
+#sC:checked ~ #controls label[for="sC"],
+#sD:checked ~ #controls label[for="sD"] {
+  background: #e8ff00;
+  color: #000;
+  border-color: #e8ff00;
 }
