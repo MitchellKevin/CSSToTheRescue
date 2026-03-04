@@ -2,49 +2,382 @@
 <html lang="nl">
 <head>
 <meta charset="UTF-8">
-<title>Rubik's Cube Shuffle Animation</title>
+<title>Cubinator</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div id="scene">
-  <div id="cube">
-    <!-- 27 cubies -->
-    <!-- elke cubie heeft 6 faces -->
-    <!-- top layer (cubies 1-9), middle layer (10-18), bottom layer (19-27) -->
-    <!-- we gebruiken classes per layer voor animatie -->
-    <!-- cubies blijven individueel, animatie beweegt ze als lagen -->
-    
-    <div class="cubie layer-top"><div></div><div></div><div></div><div></div><div></div><div></div></div>
-    <div class="cubie layer-top"><div></div><div></div><div></div><div></div><div></div><div></div></div>
-    <div class="cubie layer-top"><div></div><div></div><div></div><div></div><div></div><div></div></div>
-    <div class="cubie layer-top"><div></div><div></div><div></div><div></div><div></div><div></div></div>
-    <div class="cubie layer-top"><div></div><div></div><div></div><div></div><div></div><div></div></div>
-    <div class="cubie layer-top"><div></div><div></div><div></div><div></div><div></div><div></div></div>
-    <div class="cubie layer-top"><div></div><div></div><div></div><div></div><div></div><div></div></div>
-    <div class="cubie layer-top"><div></div><div></div><div></div><div></div><div></div><div></div></div>
-    <div class="cubie layer-top"><div></div><div></div><div></div><div></div><div></div><div></div></div>
-    
-    <div class="cubie layer-middle"><div></div><div></div><div></div><div></div><div></div><div></div></div>
-    <div class="cubie layer-middle"><div></div><div></div><div></div><div></div><div></div><div></div></div>
-    <div class="cubie layer-middle"><div></div><div></div><div></div><div></div><div></div><div></div></div>
-    <div class="cubie layer-middle"><div></div><div></div><div></div><div></div><div></div><div></div></div>
-    <div class="cubie layer-middle"><div></div><div></div><div></div><div></div><div></div><div></div></div>
-    <div class="cubie layer-middle"><div></div><div></div><div></div><div></div><div></div><div></div></div>
-    <div class="cubie layer-middle"><div></div><div></div><div></div><div></div><div></div><div></div></div>
-    <div class="cubie layer-middle"><div></div><div></div><div></div><div></div><div></div><div></div></div>
-    <div class="cubie layer-middle"><div></div><div></div><div></div><div></div><div></div><div></div></div>
 
-    <div class="cubie layer-bottom"><div></div><div></div><div></div><div></div><div></div><div></div></div>
-    <div class="cubie layer-bottom"><div></div><div></div><div></div><div></div><div></div><div></div></div>
-    <div class="cubie layer-bottom"><div></div><div></div><div></div><div></div><div></div><div></div></div>
-    <div class="cubie layer-bottom"><div></div><div></div><div></div><div></div><div></div><div></div></div>
-    <div class="cubie layer-bottom"><div></div><div></div><div></div><div></div><div></div><div></div></div>
-    <div class="cubie layer-bottom"><div></div><div></div><div></div><div></div><div></div><div></div></div>
-    <div class="cubie layer-bottom"><div></div><div></div><div></div><div></div><div></div><div></div></div>
-    <div class="cubie layer-bottom"><div></div><div></div><div></div><div></div><div></div><div></div></div>
-    <div class="cubie layer-bottom"><div></div><div></div><div></div><div></div><div></div><div></div></div>
+<input type="radio" name="step" id="s0" checked>
+<input type="radio" name="step" id="s1">
+<input type="radio" name="step" id="s2">
+<input type="radio" name="step" id="s3">
+<input type="radio" name="step" id="s4">
+<input type="radio" name="step" id="s5">
+<input type="radio" name="step" id="s6">
+<input type="radio" name="step" id="s7">
+<input type="radio" name="step" id="s8">
 
+<main>
+
+  <header>
+    <h1>CUBINATOR</h1>
+    <p>CSS-only Rubik's Cube Solver</p>
+  </header>
+
+  <section>
+    <div data-state="0">
+      <div>
+        <div data-face="1">
+          <span style="--c:#2E7D32"></span><span style="--c:#FF6B00"></span><span style="--c:#f0f0f0"></span>
+          <span style="--c:#2E7D32"></span><span style="--c:#f0f0f0"></span><span style="--c:#f0f0f0"></span>
+          <span style="--c:#1565C0"></span><span style="--c:#f0f0f0"></span><span style="--c:#FFD700"></span>
+        </div>
+        <div data-face="2">
+          <span style="--c:#2E7D32"></span><span style="--c:#FF6B00"></span><span style="--c:#2E7D32"></span>
+          <span style="--c:#FF6B00"></span><span style="--c:#FF6B00"></span><span style="--c:#2E7D32"></span>
+          <span style="--c:#FF6B00"></span><span style="--c:#FF6B00"></span><span style="--c:#f0f0f0"></span>
+        </div>
+        <div data-face="3">
+          <span style="--c:#f0f0f0"></span><span style="--c:#f0f0f0"></span><span style="--c:#f0f0f0"></span>
+          <span style="--c:#f0f0f0"></span><span style="--c:#2E7D32"></span><span style="--c:#2E7D32"></span>
+          <span style="--c:#CC2200"></span><span style="--c:#2E7D32"></span><span style="--c:#2E7D32"></span>
+        </div>
+        <div data-face="4">
+          <span style="--c:#1565C0"></span><span style="--c:#1565C0"></span><span style="--c:#FF6B00"></span>
+          <span style="--c:#1565C0"></span><span style="--c:#1565C0"></span><span style="--c:#1565C0"></span>
+          <span style="--c:#1565C0"></span><span style="--c:#1565C0"></span><span style="--c:#1565C0"></span>
+        </div>
+        <div data-face="5">
+          <span style="--c:#FF6B00"></span><span style="--c:#CC2200"></span><span style="--c:#CC2200"></span>
+          <span style="--c:#CC2200"></span><span style="--c:#CC2200"></span><span style="--c:#CC2200"></span>
+          <span style="--c:#CC2200"></span><span style="--c:#CC2200"></span><span style="--c:#CC2200"></span>
+        </div>
+        <div data-face="6">
+          <span style="--c:#FFD700"></span><span style="--c:#FFD700"></span><span style="--c:#FF6B00"></span>
+          <span style="--c:#FFD700"></span><span style="--c:#FFD700"></span><span style="--c:#FFD700"></span>
+          <span style="--c:#FFD700"></span><span style="--c:#FFD700"></span><span style="--c:#FFD700"></span>
+        </div>
+      </div>
+    </div>
+
+    <div data-state="1" data-turn="front-ccw">
+      <div>
+        <div data-face="1">
+          <span style="--c:#2E7D32"></span><span style="--c:#FF6B00"></span><span style="--c:#f0f0f0"></span>
+          <span style="--c:#2E7D32"></span><span style="--c:#f0f0f0"></span><span style="--c:#f0f0f0"></span>
+          <span style="--c:#f0f0f0"></span><span style="--c:#f0f0f0"></span><span style="--c:#CC2200"></span>
+        </div>
+        <div data-face="2">
+          <span style="--c:#2E7D32"></span><span style="--c:#2E7D32"></span><span style="--c:#f0f0f0"></span>
+          <span style="--c:#FF6B00"></span><span style="--c:#FF6B00"></span><span style="--c:#FF6B00"></span>
+          <span style="--c:#2E7D32"></span><span style="--c:#FF6B00"></span><span style="--c:#FF6B00"></span>
+        </div>
+        <div data-face="3">
+          <span style="--c:#FF6B00"></span><span style="--c:#f0f0f0"></span><span style="--c:#f0f0f0"></span>
+          <span style="--c:#FFD700"></span><span style="--c:#2E7D32"></span><span style="--c:#2E7D32"></span>
+          <span style="--c:#FFD700"></span><span style="--c:#2E7D32"></span><span style="--c:#2E7D32"></span>
+        </div>
+        <div data-face="4">
+          <span style="--c:#1565C0"></span><span style="--c:#1565C0"></span><span style="--c:#FFD700"></span>
+          <span style="--c:#1565C0"></span><span style="--c:#1565C0"></span><span style="--c:#f0f0f0"></span>
+          <span style="--c:#1565C0"></span><span style="--c:#1565C0"></span><span style="--c:#1565C0"></span>
+        </div>
+        <div data-face="5">
+          <span style="--c:#FF6B00"></span><span style="--c:#CC2200"></span><span style="--c:#CC2200"></span>
+          <span style="--c:#CC2200"></span><span style="--c:#CC2200"></span><span style="--c:#CC2200"></span>
+          <span style="--c:#CC2200"></span><span style="--c:#CC2200"></span><span style="--c:#CC2200"></span>
+        </div>
+        <div data-face="6">
+          <span style="--c:#FF6B00"></span><span style="--c:#1565C0"></span><span style="--c:#1565C0"></span>
+          <span style="--c:#FFD700"></span><span style="--c:#FFD700"></span><span style="--c:#FFD700"></span>
+          <span style="--c:#FFD700"></span><span style="--c:#FFD700"></span><span style="--c:#FFD700"></span>
+        </div>
+      </div>
+    </div>
+
+    <div data-state="2" data-turn="top-ccw">
+      <div>
+        <div data-face="1">
+          <span style="--c:#f0f0f0"></span><span style="--c:#f0f0f0"></span><span style="--c:#CC2200"></span>
+          <span style="--c:#FF6B00"></span><span style="--c:#f0f0f0"></span><span style="--c:#f0f0f0"></span>
+          <span style="--c:#2E7D32"></span><span style="--c:#2E7D32"></span><span style="--c:#f0f0f0"></span>
+        </div>
+        <div data-face="2">
+          <span style="--c:#FF6B00"></span><span style="--c:#f0f0f0"></span><span style="--c:#f0f0f0"></span>
+          <span style="--c:#FF6B00"></span><span style="--c:#FF6B00"></span><span style="--c:#FF6B00"></span>
+          <span style="--c:#2E7D32"></span><span style="--c:#FF6B00"></span><span style="--c:#FF6B00"></span>
+        </div>
+        <div data-face="3">
+          <span style="--c:#FF6B00"></span><span style="--c:#CC2200"></span><span style="--c:#CC2200"></span>
+          <span style="--c:#FFD700"></span><span style="--c:#2E7D32"></span><span style="--c:#2E7D32"></span>
+          <span style="--c:#FFD700"></span><span style="--c:#2E7D32"></span><span style="--c:#2E7D32"></span>
+        </div>
+        <div data-face="4">
+          <span style="--c:#2E7D32"></span><span style="--c:#2E7D32"></span><span style="--c:#f0f0f0"></span>
+          <span style="--c:#1565C0"></span><span style="--c:#1565C0"></span><span style="--c:#f0f0f0"></span>
+          <span style="--c:#1565C0"></span><span style="--c:#1565C0"></span><span style="--c:#1565C0"></span>
+        </div>
+        <div data-face="5">
+          <span style="--c:#1565C0"></span><span style="--c:#1565C0"></span><span style="--c:#FFD700"></span>
+          <span style="--c:#CC2200"></span><span style="--c:#CC2200"></span><span style="--c:#CC2200"></span>
+          <span style="--c:#CC2200"></span><span style="--c:#CC2200"></span><span style="--c:#CC2200"></span>
+        </div>
+        <div data-face="6">
+          <span style="--c:#FF6B00"></span><span style="--c:#1565C0"></span><span style="--c:#1565C0"></span>
+          <span style="--c:#FFD700"></span><span style="--c:#FFD700"></span><span style="--c:#FFD700"></span>
+          <span style="--c:#FFD700"></span><span style="--c:#FFD700"></span><span style="--c:#FFD700"></span>
+        </div>
+      </div>
+    </div>
+
+    <div data-state="3" data-turn="front-cw">
+      <div>
+        <div data-face="1">
+          <span style="--c:#f0f0f0"></span><span style="--c:#f0f0f0"></span><span style="--c:#CC2200"></span>
+          <span style="--c:#FF6B00"></span><span style="--c:#f0f0f0"></span><span style="--c:#f0f0f0"></span>
+          <span style="--c:#1565C0"></span><span style="--c:#f0f0f0"></span><span style="--c:#f0f0f0"></span>
+        </div>
+        <div data-face="2">
+          <span style="--c:#2E7D32"></span><span style="--c:#FF6B00"></span><span style="--c:#FF6B00"></span>
+          <span style="--c:#FF6B00"></span><span style="--c:#FF6B00"></span><span style="--c:#f0f0f0"></span>
+          <span style="--c:#FF6B00"></span><span style="--c:#FF6B00"></span><span style="--c:#f0f0f0"></span>
+        </div>
+        <div data-face="3">
+          <span style="--c:#2E7D32"></span><span style="--c:#CC2200"></span><span style="--c:#CC2200"></span>
+          <span style="--c:#2E7D32"></span><span style="--c:#2E7D32"></span><span style="--c:#2E7D32"></span>
+          <span style="--c:#f0f0f0"></span><span style="--c:#2E7D32"></span><span style="--c:#2E7D32"></span>
+        </div>
+        <div data-face="4">
+          <span style="--c:#2E7D32"></span><span style="--c:#2E7D32"></span><span style="--c:#FF6B00"></span>
+          <span style="--c:#1565C0"></span><span style="--c:#1565C0"></span><span style="--c:#1565C0"></span>
+          <span style="--c:#1565C0"></span><span style="--c:#1565C0"></span><span style="--c:#1565C0"></span>
+        </div>
+        <div data-face="5">
+          <span style="--c:#1565C0"></span><span style="--c:#1565C0"></span><span style="--c:#FFD700"></span>
+          <span style="--c:#CC2200"></span><span style="--c:#CC2200"></span><span style="--c:#CC2200"></span>
+          <span style="--c:#CC2200"></span><span style="--c:#CC2200"></span><span style="--c:#CC2200"></span>
+        </div>
+        <div data-face="6">
+          <span style="--c:#FFD700"></span><span style="--c:#FFD700"></span><span style="--c:#FF6B00"></span>
+          <span style="--c:#FFD700"></span><span style="--c:#FFD700"></span><span style="--c:#FFD700"></span>
+          <span style="--c:#FFD700"></span><span style="--c:#FFD700"></span><span style="--c:#FFD700"></span>
+        </div>
+      </div>
+    </div>
+
+    <div data-state="4" data-turn="top-cw">
+      <div>
+        <div data-face="1">
+          <span style="--c:#1565C0"></span><span style="--c:#FF6B00"></span><span style="--c:#f0f0f0"></span>
+          <span style="--c:#f0f0f0"></span><span style="--c:#f0f0f0"></span><span style="--c:#f0f0f0"></span>
+          <span style="--c:#f0f0f0"></span><span style="--c:#f0f0f0"></span><span style="--c:#CC2200"></span>
+        </div>
+        <div data-face="2">
+          <span style="--c:#2E7D32"></span><span style="--c:#2E7D32"></span><span style="--c:#FF6B00"></span>
+          <span style="--c:#FF6B00"></span><span style="--c:#FF6B00"></span><span style="--c:#f0f0f0"></span>
+          <span style="--c:#FF6B00"></span><span style="--c:#FF6B00"></span><span style="--c:#f0f0f0"></span>
+        </div>
+        <div data-face="3">
+          <span style="--c:#2E7D32"></span><span style="--c:#FF6B00"></span><span style="--c:#FF6B00"></span>
+          <span style="--c:#2E7D32"></span><span style="--c:#2E7D32"></span><span style="--c:#2E7D32"></span>
+          <span style="--c:#f0f0f0"></span><span style="--c:#2E7D32"></span><span style="--c:#2E7D32"></span>
+        </div>
+        <div data-face="4">
+          <span style="--c:#1565C0"></span><span style="--c:#1565C0"></span><span style="--c:#FFD700"></span>
+          <span style="--c:#1565C0"></span><span style="--c:#1565C0"></span><span style="--c:#1565C0"></span>
+          <span style="--c:#1565C0"></span><span style="--c:#1565C0"></span><span style="--c:#1565C0"></span>
+        </div>
+        <div data-face="5">
+          <span style="--c:#2E7D32"></span><span style="--c:#CC2200"></span><span style="--c:#CC2200"></span>
+          <span style="--c:#CC2200"></span><span style="--c:#CC2200"></span><span style="--c:#CC2200"></span>
+          <span style="--c:#CC2200"></span><span style="--c:#CC2200"></span><span style="--c:#CC2200"></span>
+        </div>
+        <div data-face="6">
+          <span style="--c:#FFD700"></span><span style="--c:#FFD700"></span><span style="--c:#FF6B00"></span>
+          <span style="--c:#FFD700"></span><span style="--c:#FFD700"></span><span style="--c:#FFD700"></span>
+          <span style="--c:#FFD700"></span><span style="--c:#FFD700"></span><span style="--c:#FFD700"></span>
+        </div>
+      </div>
+    </div>
+
+    <div data-state="5" data-turn="right-cw">
+      <div>
+        <div data-face="1">
+          <span style="--c:#1565C0"></span><span style="--c:#FF6B00"></span><span style="--c:#FF6B00"></span>
+          <span style="--c:#f0f0f0"></span><span style="--c:#f0f0f0"></span><span style="--c:#f0f0f0"></span>
+          <span style="--c:#f0f0f0"></span><span style="--c:#f0f0f0"></span><span style="--c:#f0f0f0"></span>
+        </div>
+        <div data-face="2">
+          <span style="--c:#2E7D32"></span><span style="--c:#2E7D32"></span><span style="--c:#FF6B00"></span>
+          <span style="--c:#FF6B00"></span><span style="--c:#FF6B00"></span><span style="--c:#FFD700"></span>
+          <span style="--c:#FF6B00"></span><span style="--c:#FF6B00"></span><span style="--c:#FFD700"></span>
+        </div>
+        <div data-face="3">
+          <span style="--c:#f0f0f0"></span><span style="--c:#2E7D32"></span><span style="--c:#2E7D32"></span>
+          <span style="--c:#2E7D32"></span><span style="--c:#2E7D32"></span><span style="--c:#FF6B00"></span>
+          <span style="--c:#2E7D32"></span><span style="--c:#2E7D32"></span><span style="--c:#FF6B00"></span>
+        </div>
+        <div data-face="4">
+          <span style="--c:#1565C0"></span><span style="--c:#1565C0"></span><span style="--c:#FFD700"></span>
+          <span style="--c:#1565C0"></span><span style="--c:#1565C0"></span><span style="--c:#1565C0"></span>
+          <span style="--c:#1565C0"></span><span style="--c:#1565C0"></span><span style="--c:#1565C0"></span>
+        </div>
+        <div data-face="5">
+          <span style="--c:#CC2200"></span><span style="--c:#CC2200"></span><span style="--c:#CC2200"></span>
+          <span style="--c:#f0f0f0"></span><span style="--c:#CC2200"></span><span style="--c:#CC2200"></span>
+          <span style="--c:#f0f0f0"></span><span style="--c:#CC2200"></span><span style="--c:#CC2200"></span>
+        </div>
+        <div data-face="6">
+          <span style="--c:#FFD700"></span><span style="--c:#FFD700"></span><span style="--c:#CC2200"></span>
+          <span style="--c:#FFD700"></span><span style="--c:#FFD700"></span><span style="--c:#CC2200"></span>
+          <span style="--c:#FFD700"></span><span style="--c:#FFD700"></span><span style="--c:#2E7D32"></span>
+        </div>
+      </div>
+    </div>
+
+    <div data-state="6" data-turn="top-ccw">
+      <div>
+        <div data-face="1">
+          <span style="--c:#f0f0f0"></span><span style="--c:#f0f0f0"></span><span style="--c:#1565C0"></span>
+          <span style="--c:#f0f0f0"></span><span style="--c:#f0f0f0"></span><span style="--c:#FF6B00"></span>
+          <span style="--c:#f0f0f0"></span><span style="--c:#f0f0f0"></span><span style="--c:#FF6B00"></span>
+        </div>
+        <div data-face="2">
+          <span style="--c:#1565C0"></span><span style="--c:#1565C0"></span><span style="--c:#FFD700"></span>
+          <span style="--c:#FF6B00"></span><span style="--c:#FF6B00"></span><span style="--c:#FFD700"></span>
+          <span style="--c:#FF6B00"></span><span style="--c:#FF6B00"></span><span style="--c:#FFD700"></span>
+        </div>
+        <div data-face="3">
+          <span style="--c:#2E7D32"></span><span style="--c:#2E7D32"></span><span style="--c:#FF6B00"></span>
+          <span style="--c:#2E7D32"></span><span style="--c:#2E7D32"></span><span style="--c:#FF6B00"></span>
+          <span style="--c:#2E7D32"></span><span style="--c:#2E7D32"></span><span style="--c:#FF6B00"></span>
+        </div>
+        <div data-face="4">
+          <span style="--c:#CC2200"></span><span style="--c:#CC2200"></span><span style="--c:#CC2200"></span>
+          <span style="--c:#1565C0"></span><span style="--c:#1565C0"></span><span style="--c:#1565C0"></span>
+          <span style="--c:#1565C0"></span><span style="--c:#1565C0"></span><span style="--c:#1565C0"></span>
+        </div>
+        <div data-face="5">
+          <span style="--c:#f0f0f0"></span><span style="--c:#2E7D32"></span><span style="--c:#2E7D32"></span>
+          <span style="--c:#f0f0f0"></span><span style="--c:#CC2200"></span><span style="--c:#CC2200"></span>
+          <span style="--c:#f0f0f0"></span><span style="--c:#CC2200"></span><span style="--c:#CC2200"></span>
+        </div>
+        <div data-face="6">
+          <span style="--c:#FFD700"></span><span style="--c:#FFD700"></span><span style="--c:#CC2200"></span>
+          <span style="--c:#FFD700"></span><span style="--c:#FFD700"></span><span style="--c:#CC2200"></span>
+          <span style="--c:#FFD700"></span><span style="--c:#FFD700"></span><span style="--c:#2E7D32"></span>
+        </div>
+      </div>
+    </div>
+
+    <div data-state="7" data-turn="right-ccw">
+      <div>
+        <div data-face="1">
+          <span style="--c:#f0f0f0"></span><span style="--c:#f0f0f0"></span><span style="--c:#f0f0f0"></span>
+          <span style="--c:#f0f0f0"></span><span style="--c:#f0f0f0"></span><span style="--c:#f0f0f0"></span>
+          <span style="--c:#f0f0f0"></span><span style="--c:#f0f0f0"></span><span style="--c:#f0f0f0"></span>
+        </div>
+        <div data-face="2">
+          <span style="--c:#1565C0"></span><span style="--c:#1565C0"></span><span style="--c:#1565C0"></span>
+          <span style="--c:#FF6B00"></span><span style="--c:#FF6B00"></span><span style="--c:#FF6B00"></span>
+          <span style="--c:#FF6B00"></span><span style="--c:#FF6B00"></span><span style="--c:#FF6B00"></span>
+        </div>
+        <div data-face="3">
+          <span style="--c:#FF6B00"></span><span style="--c:#FF6B00"></span><span style="--c:#FF6B00"></span>
+          <span style="--c:#2E7D32"></span><span style="--c:#2E7D32"></span><span style="--c:#2E7D32"></span>
+          <span style="--c:#2E7D32"></span><span style="--c:#2E7D32"></span><span style="--c:#2E7D32"></span>
+        </div>
+        <div data-face="4">
+          <span style="--c:#CC2200"></span><span style="--c:#CC2200"></span><span style="--c:#CC2200"></span>
+          <span style="--c:#1565C0"></span><span style="--c:#1565C0"></span><span style="--c:#1565C0"></span>
+          <span style="--c:#1565C0"></span><span style="--c:#1565C0"></span><span style="--c:#1565C0"></span>
+        </div>
+        <div data-face="5">
+          <span style="--c:#2E7D32"></span><span style="--c:#2E7D32"></span><span style="--c:#2E7D32"></span>
+          <span style="--c:#CC2200"></span><span style="--c:#CC2200"></span><span style="--c:#CC2200"></span>
+          <span style="--c:#CC2200"></span><span style="--c:#CC2200"></span><span style="--c:#CC2200"></span>
+        </div>
+        <div data-face="6">
+          <span style="--c:#FFD700"></span><span style="--c:#FFD700"></span><span style="--c:#FFD700"></span>
+          <span style="--c:#FFD700"></span><span style="--c:#FFD700"></span><span style="--c:#FFD700"></span>
+          <span style="--c:#FFD700"></span><span style="--c:#FFD700"></span><span style="--c:#FFD700"></span>
+        </div>
+      </div>
+    </div>
+
+    <div data-state="8" data-turn="top-ccw">
+      <div>
+        <div data-face="1">
+          <span style="--c:#f0f0f0"></span><span style="--c:#f0f0f0"></span><span style="--c:#f0f0f0"></span>
+          <span style="--c:#f0f0f0"></span><span style="--c:#f0f0f0"></span><span style="--c:#f0f0f0"></span>
+          <span style="--c:#f0f0f0"></span><span style="--c:#f0f0f0"></span><span style="--c:#f0f0f0"></span>
+        </div>
+        <div data-face="2">
+          <span style="--c:#FF6B00"></span><span style="--c:#FF6B00"></span><span style="--c:#FF6B00"></span>
+          <span style="--c:#FF6B00"></span><span style="--c:#FF6B00"></span><span style="--c:#FF6B00"></span>
+          <span style="--c:#FF6B00"></span><span style="--c:#FF6B00"></span><span style="--c:#FF6B00"></span>
+        </div>
+        <div data-face="3">
+          <span style="--c:#2E7D32"></span><span style="--c:#2E7D32"></span><span style="--c:#2E7D32"></span>
+          <span style="--c:#2E7D32"></span><span style="--c:#2E7D32"></span><span style="--c:#2E7D32"></span>
+          <span style="--c:#2E7D32"></span><span style="--c:#2E7D32"></span><span style="--c:#2E7D32"></span>
+        </div>
+        <div data-face="4">
+          <span style="--c:#1565C0"></span><span style="--c:#1565C0"></span><span style="--c:#1565C0"></span>
+          <span style="--c:#1565C0"></span><span style="--c:#1565C0"></span><span style="--c:#1565C0"></span>
+          <span style="--c:#1565C0"></span><span style="--c:#1565C0"></span><span style="--c:#1565C0"></span>
+        </div>
+        <div data-face="5">
+          <span style="--c:#CC2200"></span><span style="--c:#CC2200"></span><span style="--c:#CC2200"></span>
+          <span style="--c:#CC2200"></span><span style="--c:#CC2200"></span><span style="--c:#CC2200"></span>
+          <span style="--c:#CC2200"></span><span style="--c:#CC2200"></span><span style="--c:#CC2200"></span>
+        </div>
+        <div data-face="6">
+          <span style="--c:#FFD700"></span><span style="--c:#FFD700"></span><span style="--c:#FFD700"></span>
+          <span style="--c:#FFD700"></span><span style="--c:#FFD700"></span><span style="--c:#FFD700"></span>
+          <span style="--c:#FFD700"></span><span style="--c:#FFD700"></span><span style="--c:#FFD700"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <nav>
+    <i data-pip="0"></i><i data-pip="1"></i><i data-pip="2"></i><i data-pip="3"></i>
+    <i data-pip="4"></i><i data-pip="5"></i><i data-pip="6"></i><i data-pip="7"></i><i data-pip="8"></i>
+  </nav>
+
+  <figure>
+    <p data-label="0"><span>Scrambled</span><b>U R U' R' U' F' U F</b></p>
+    <p data-label="1"><span>Step 1 of 8</span><b>F'</b></p>
+    <p data-label="2"><span>Step 2 of 8</span><b>U'</b></p>
+    <p data-label="3"><span>Step 3 of 8</span><b>F</b></p>
+    <p data-label="4"><span>Step 4 of 8</span><b>U</b></p>
+    <p data-label="5"><span>Step 5 of 8</span><b>R</b></p>
+    <p data-label="6"><span>Step 6 of 8</span><b>U'</b></p>
+    <p data-label="7"><span>Step 7 of 8</span><b>R'</b></p>
+    <p data-label="8"><span>Solved!</span><b>✓</b></p>
+  </figure>
+
+  <div>
+    <label data-next="0" for="s1">Next Step →</label>
+    <label data-back="1" for="s0">← Back</label>
+    <label data-next="1" for="s2">Next Step →</label>
+    <label data-back="2" for="s1">← Back</label>
+    <label data-next="2" for="s3">Next Step →</label>
+    <label data-back="3" for="s2">← Back</label>
+    <label data-next="3" for="s4">Next Step →</label>
+    <label data-back="4" for="s3">← Back</label>
+    <label data-next="4" for="s5">Next Step →</label>
+    <label data-back="5" for="s4">← Back</label>
+    <label data-next="5" for="s6">Next Step →</label>
+    <label data-back="6" for="s5">← Back</label>
+    <label data-next="6" for="s7">Next Step →</label>
+    <label data-back="7" for="s6">← Back</label>
+    <label data-next="7" for="s8">Next Step →</label>
+    <label data-back="8" for="s7">← Back</label>
+    <label data-reset for="s0">↺ Again</label>
   </div>
-</div>
+
+</main>
 </body>
 </html>

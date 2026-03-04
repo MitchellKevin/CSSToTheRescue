@@ -1,165 +1,482 @@
-/* ===== RESET / SCENE ===== */
-body{
-  margin:0;
-  height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:#222;
+/* ================================================================
+   CUBINATOR — CSS-Only, zero classes
+   All selectors via data-*, nth-child(), element types
+   ================================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Bebas+Neue&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:        #0d0d0f;
+  --surface:   #16161a;
+  --border:    #2a2a35;
+  --accent:    #e8ff00;
+  --text:      #e0e0e8;
+  --muted:     #555568;
+  --sz:        160px;     /* cube side length */
+  --gap:       5px;       /* sticker gap */
+  --dur:       0.6s;      /* turn animation duration */
 }
 
-#scene{
-  width:300px;
-  height:300px;
-  perspective:1000px;
-  overflow:visible;
+/* ── hide radios ── */
+input[type="radio"] { display: none; }
+
+/* ── page ── */
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Share Tech Mono', monospace;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 20px;
 }
 
-/* ===== CUBE ===== */
-#cube{
-  position:relative;
-  width:0;
-  height:0;
-  transform-style:preserve-3d;
-  transform:rotateX(-30deg) rotateY(30deg);
+/* grid bg */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(232,255,0,.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(232,255,0,.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: -1;
 }
 
-/* ===== CUBIES ===== */
-#cube > div{
-  position:absolute;
-  width:60px;
-  height:60px;
-  transform-style:preserve-3d;
-  transform:translate3d(var(--x),var(--y),var(--z));
+/* ── main shell ── */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 520px;
+  gap: 0;
 }
 
-/* ===== X POSITIES (kolommen) ===== */
-#cube > div:nth-child(3n+1){ --x:-70px; }
-#cube > div:nth-child(3n+2){ --x:0px; }
-#cube > div:nth-child(3n){   --x:70px; }
-
-/* ===== Z POSITIES (lagen van 9) ===== */
-#cube > div:nth-child(-n+9){ --z:70px; }   /* bovenste laag */
-#cube > div:nth-child(n+10):nth-child(-n+18){ --z:0px; }  /* middelste laag */
-#cube > div:nth-child(n+19):nth-child(-n+27){ --z:-70px; } /* onderste laag */
-
-/* ===== Y POSITIES (rijen binnen elke laag) ===== */
-#cube > div:nth-child(9n+1),
-#cube > div:nth-child(9n+2),
-#cube > div:nth-child(9n+3){
-  --y:-70px;
+/* ── header ── */
+header {
+  text-align: center;
+  margin-bottom: 32px;
 }
 
-#cube > div:nth-child(9n+4),
-#cube > div:nth-child(9n+5),
-#cube > div:nth-child(9n+6){
-  --y:0px;
+header h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  letter-spacing: .12em;
+  color: var(--accent);
+  line-height: 1;
+  text-shadow: 0 0 40px rgba(232,255,0,.25);
 }
 
-#cube > div:nth-child(9n+7),
-#cube > div:nth-child(9n+8),
-#cube > div:nth-child(9n+9){
-  --y:70px;
+header p {
+  font-size: .7rem;
+  color: var(--muted);
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  margin-top: 4px;
 }
 
-/* ===== FACES ===== */
-#cube > div > div{
-  position:absolute;
-  width:60px;
-  height:60px;
-  border:2px solid black;
-  backface-visibility:hidden;
+/* ── stage (section) ── */
+section {
+  position: relative;
+  width: 340px;
+  height: 340px;
+  perspective: 900px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 28px;
 }
 
-/* FRONT */
-#cube > div > div:nth-child(1){
-  background:red;
-  transform:translateZ(30px);
+/* ── every cube-wrap (data-state divs) ── */
+section > div {
+  position: absolute;
+  width: 0;
+  height: 0;
+  transform-style: preserve-3d;
+  opacity: 0;
+  pointer-events: none;
 }
 
-/* BACK */
-#cube > div > div:nth-child(2){
-  background:orange;
-  transform:rotateY(180deg) translateZ(30px);
+/* ── the inner cube div ── */
+section > div > div {
+  position: absolute;
+  width: var(--sz);
+  height: var(--sz);
+  transform-style: preserve-3d;
+  transform: rotateX(-28deg) rotateY(-42deg);
+  left: calc(var(--sz) / -2);
+  top:  calc(var(--sz) / -2);
 }
 
-/* RIGHT */
-#cube > div > div:nth-child(3){
-  background:green;
-  transform:rotateY(90deg) translateZ(30px);
+/* ── faces (data-face divs) ── */
+section > div > div > div {
+  position: absolute;
+  width: var(--sz);
+  height: var(--sz);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: var(--gap);
+  padding: var(--gap);
+  background: #111;
+  border-radius: 6px;
+  box-shadow: inset 0 0 0 2px #000;
+  backface-visibility: hidden;
 }
 
-/* LEFT */
-#cube > div > div:nth-child(4){
-  background:blue;
-  transform:rotateY(-90deg) translateZ(30px);
+/* face positions via data-face */
+[data-face="1"] { transform: rotateX( 90deg) translateZ(calc(var(--sz)/2)); } /* top   */
+[data-face="2"] { transform:             translateZ(calc(var(--sz)/2)); }      /* front */
+[data-face="3"] { transform: rotateY( 90deg) translateZ(calc(var(--sz)/2)); } /* right */
+[data-face="4"] { transform: rotateY(-90deg) translateZ(calc(var(--sz)/2)); } /* left  */
+[data-face="5"] { transform: rotateY(180deg) translateZ(calc(var(--sz)/2)); } /* back  */
+[data-face="6"] { transform: rotateX(-90deg) translateZ(calc(var(--sz)/2)); } /* bottom*/
+
+/* ── stickers (span elements) ── */
+section span {
+  background: var(--c);
+  border-radius: 4px;
+  box-shadow:
+    inset 0 2px 4px rgba(255,255,255,.25),
+    inset 0 -2px 4px rgba(0,0,0,.4);
 }
 
-/* TOP */
-#cube > div > div:nth-child(5){
-  background:white;
-  transform:rotateX(90deg) translateZ(30px);
+/* ── progress dots (nav > i) ── */
+nav {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 16px;
 }
 
-/* BOTTOM */
-#cube > div > div:nth-child(6){
-  background:yellow;
-  transform:rotateX(-90deg) translateZ(30px);
+nav > i {
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--border);
+  transition: background .3s, transform .3s;
+  font-style: normal;
 }
 
-/* ===== ANIMATIE BOVENSTE LAAG ===== */
-
-@keyframes rotateTopLayer {
-  from {
-    transform: translate3d(var(--x), var(--y), var(--z)) rotateZ(0deg);
-  }
-  to {
-    transform: translate3d(var(--x), var(--y), var(--z)) rotateZ(180deg);
-  }
+/* ── move labels (figure > p) ── */
+figure {
+  position: relative;
+  height: 56px;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+  overflow: hidden;
 }
 
-@keyframes rotateBottomLayer {
-  from {
-    transform: translate3d(var(--x), var(--y), var(--z)) rotateZ(0deg);
-  }
-  to {
-    transform: translate3d(var(--x), var(--y), var(--z)) rotateZ(-90deg);
-  }
+figure > p {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: .75rem;
+  color: var(--muted);
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity .3s, transform .3s;
+  pointer-events: none;
 }
 
-@keyframes rotateColumn {
-  from {
-    transform: translate3d(var(--x), var(--y), var(--z)) rotateY(0deg);
-  }
-  to {
-    transform: translate3d(var(--x), var(--y), var(--z)) rotateY(90deg);
-  }
+figure > p > b {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2rem;
+  color: var(--accent);
+  letter-spacing: .1em;
+  line-height: 1;
+  margin-top: 2px;
+  text-shadow: 0 0 20px rgba(232,255,0,.4);
+  font-weight: normal;
 }
 
-
-#cube > div:nth-child(-n+9) {
-  animation: rotateTopLayer 2s forwards;
+/* solved label styling */
+figure > p[data-label="8"] > b {
+  color: #00e676;
+  text-shadow: 0 0 20px rgba(0,230,118,.5);
 }
 
-#cube > div:nth-child(1),
-#cube > div:nth-child(2),
-#cube > div:nth-child(3),
-#cube > div:nth-child(10),
-#cube > div:nth-child(11),
-#cube > div:nth-child(12),
-#cube > div:nth-child(19),
-#cube > div:nth-child(20),
-#cube > div:nth-child(21) {
-  animation: rotateColumn 2s 2s forwards;
+/* ── button area (main > div) ── */
+main > div {
+  position: relative;
+  height: 48px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
-#cube > div:nth-child(n+18) {
-  animation: rotateBottomLayer 2s 4s forwards;
+main > div > label {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 28px;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: .8rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 4px;
+  opacity: 0;
+  pointer-events: none;
+  transition: background .2s, transform .1s;
+  user-select: none;
+  white-space: nowrap;
 }
 
+/* Back buttons — left side */
+label[data-back] {
+  left: 0;
+  background: var(--surface);
+  color: var(--muted);
+  border: 1px solid var(--border);
+}
+label[data-back]:hover  { background: #1e1e26; color: var(--text); }
+label[data-back]:active { transform: scale(.97); }
 
-/* ===== ANIMATIE HELE CUBE ===== */
-@keyframes spinCube {
-  from { transform: rotateX(-30deg) rotateY(0deg); }
-  to   { transform: rotateX(-30deg) rotateY(360deg); }
+/* Next buttons — right side */
+label[data-next] {
+  right: 0;
+  background: var(--accent);
+  color: #000;
+  font-weight: bold;
+  border: none;
+}
+label[data-next]:hover  { background: #f0ff20; }
+label[data-next]:active { transform: scale(.97); }
+
+/* Reset button — centred */
+label[data-reset] {
+  left: 50%;
+  transform: translateX(-50%);
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+}
+label[data-reset]:hover { background: rgba(232,255,0,.08); }
+
+/* ================================================================
+   TURN ANIMATION KEYFRAMES
+   Each move type gets its own keyframe set.
+   The cube rotates globally to imply the layer is turning,
+   showing a clear 90° twist then settling into end-state.
+   ================================================================ */
+
+/* Front CW  (F)  — roll down on Z */
+@keyframes turn-front-cw {
+  0%   { transform: rotateX(-28deg) rotateY(-42deg) rotateZ(0deg); }
+  50%  { transform: rotateX(-28deg) rotateY(-42deg) rotateZ(-90deg); }
+  100% { transform: rotateX(-28deg) rotateY(-42deg) rotateZ(0deg); }
+}
+
+/* Front CCW (F') — roll up on Z */
+@keyframes turn-front-ccw {
+  0%   { transform: rotateX(-28deg) rotateY(-42deg) rotateZ(0deg); }
+  50%  { transform: rotateX(-28deg) rotateY(-42deg) rotateZ(90deg); }
+  100% { transform: rotateX(-28deg) rotateY(-42deg) rotateZ(0deg); }
+}
+
+/* Top CW  (U)  — spin left on Y */
+@keyframes turn-top-cw {
+  0%   { transform: rotateX(-28deg) rotateY(-42deg); }
+  50%  { transform: rotateX(-28deg) rotateY(-132deg); }
+  100% { transform: rotateX(-28deg) rotateY(-42deg); }
+}
+
+/* Top CCW (U') — spin right on Y */
+@keyframes turn-top-ccw {
+  0%   { transform: rotateX(-28deg) rotateY(-42deg); }
+  50%  { transform: rotateX(-28deg) rotateY(48deg); }
+  100% { transform: rotateX(-28deg) rotateY(-42deg); }
+}
+
+/* Right CW  (R)  — tilt forward on X */
+@keyframes turn-right-cw {
+  0%   { transform: rotateX(-28deg) rotateY(-42deg); }
+  50%  { transform: rotateX(62deg)  rotateY(-42deg); }
+  100% { transform: rotateX(-28deg) rotateY(-42deg); }
+}
+
+/* Right CCW (R') — tilt back on X */
+@keyframes turn-right-ccw {
+  0%   { transform: rotateX(-28deg) rotateY(-42deg); }
+  50%  { transform: rotateX(-118deg) rotateY(-42deg); }
+  100% { transform: rotateX(-28deg) rotateY(-42deg); }
+}
+
+/* Solved — slow continuous spin */
+@keyframes solved-spin {
+  from { transform: rotateX(-28deg) rotateY(-42deg); }
+  to   { transform: rotateX(-28deg) rotateY(318deg); }
+}
+
+/* Sticker shimmer on solved */
+@keyframes shimmer {
+  0%,100% { filter: brightness(1); }
+  50%     { filter: brightness(1.4); }
+}
+
+/* ================================================================
+   STATE MACHINE
+   #s0:checked ~ main  [data-state="0"] etc.
+   ================================================================ */
+
+/* ── helper: show a cube state ── */
+#s0:checked ~ main [data-state="0"],
+#s1:checked ~ main [data-state="1"],
+#s2:checked ~ main [data-state="2"],
+#s3:checked ~ main [data-state="3"],
+#s4:checked ~ main [data-state="4"],
+#s5:checked ~ main [data-state="5"],
+#s6:checked ~ main [data-state="6"],
+#s7:checked ~ main [data-state="7"],
+#s8:checked ~ main [data-state="8"] {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ── turn animations: play when state becomes active ── */
+#s1:checked ~ main [data-state="1"] > div { animation: turn-front-ccw var(--dur) ease-in-out; }
+#s2:checked ~ main [data-state="2"] > div { animation: turn-top-ccw   var(--dur) ease-in-out; }
+#s3:checked ~ main [data-state="3"] > div { animation: turn-front-cw  var(--dur) ease-in-out; }
+#s4:checked ~ main [data-state="4"] > div { animation: turn-top-cw    var(--dur) ease-in-out; }
+#s5:checked ~ main [data-state="5"] > div { animation: turn-right-cw  var(--dur) ease-in-out; }
+#s6:checked ~ main [data-state="6"] > div { animation: turn-top-ccw   var(--dur) ease-in-out; }
+#s7:checked ~ main [data-state="7"] > div { animation: turn-right-ccw var(--dur) ease-in-out; }
+#s8:checked ~ main [data-state="8"] > div { animation: turn-top-ccw   var(--dur) ease-in-out; }
+
+/* ── solved state: continuous spin + shimmer ── */
+#s8:checked ~ main [data-state="8"] > div {
+  animation: solved-spin 4s linear infinite;
+}
+#s8:checked ~ main [data-state="8"] span {
+  animation: shimmer 2s ease-in-out infinite;
+}
+
+/* ── show move labels ── */
+#s0:checked ~ main [data-label="0"],
+#s1:checked ~ main [data-label="1"],
+#s2:checked ~ main [data-label="2"],
+#s3:checked ~ main [data-label="3"],
+#s4:checked ~ main [data-label="4"],
+#s5:checked ~ main [data-label="5"],
+#s6:checked ~ main [data-label="6"],
+#s7:checked ~ main [data-label="7"],
+#s8:checked ~ main [data-label="8"] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── show buttons ── */
+
+/* next buttons: show for states 0-7 */
+#s0:checked ~ main [data-next="0"],
+#s1:checked ~ main [data-next="1"],
+#s2:checked ~ main [data-next="2"],
+#s3:checked ~ main [data-next="3"],
+#s4:checked ~ main [data-next="4"],
+#s5:checked ~ main [data-next="5"],
+#s6:checked ~ main [data-next="6"],
+#s7:checked ~ main [data-next="7"] {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* back buttons: show for states 1-8 */
+#s1:checked ~ main [data-back="1"],
+#s2:checked ~ main [data-back="2"],
+#s3:checked ~ main [data-back="3"],
+#s4:checked ~ main [data-back="4"],
+#s5:checked ~ main [data-back="5"],
+#s6:checked ~ main [data-back="6"],
+#s7:checked ~ main [data-back="7"],
+#s8:checked ~ main [data-back="8"] {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* reset button: only on state 8 */
+#s8:checked ~ main [data-reset] {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%);
+}
+
+/* ── progress pips ── */
+
+/* current pip: accent + scale */
+#s0:checked ~ main [data-pip="0"],
+#s1:checked ~ main [data-pip="1"],
+#s2:checked ~ main [data-pip="2"],
+#s3:checked ~ main [data-pip="3"],
+#s4:checked ~ main [data-pip="4"],
+#s5:checked ~ main [data-pip="5"],
+#s6:checked ~ main [data-pip="6"],
+#s7:checked ~ main [data-pip="7"],
+#s8:checked ~ main [data-pip="8"] {
+  background: var(--accent);
+  transform: scale(1.5);
+}
+
+/* solved pips: green for all */
+#s8:checked ~ main nav > i {
+  background: #00e676;
+}
+#s8:checked ~ main [data-pip="8"] {
+  box-shadow: 0 0 8px rgba(0,230,118,.6);
+}
+
+/* completed pips (all before current): accent colour, smaller */
+#s1:checked ~ main [data-pip="0"],
+#s2:checked ~ main [data-pip="0"],
+#s2:checked ~ main [data-pip="1"],
+#s3:checked ~ main [data-pip="0"],
+#s3:checked ~ main [data-pip="1"],
+#s3:checked ~ main [data-pip="2"],
+#s4:checked ~ main [data-pip="0"],
+#s4:checked ~ main [data-pip="1"],
+#s4:checked ~ main [data-pip="2"],
+#s4:checked ~ main [data-pip="3"],
+#s5:checked ~ main [data-pip="0"],
+#s5:checked ~ main [data-pip="1"],
+#s5:checked ~ main [data-pip="2"],
+#s5:checked ~ main [data-pip="3"],
+#s5:checked ~ main [data-pip="4"],
+#s6:checked ~ main [data-pip="0"],
+#s6:checked ~ main [data-pip="1"],
+#s6:checked ~ main [data-pip="2"],
+#s6:checked ~ main [data-pip="3"],
+#s6:checked ~ main [data-pip="4"],
+#s6:checked ~ main [data-pip="5"],
+#s7:checked ~ main [data-pip="0"],
+#s7:checked ~ main [data-pip="1"],
+#s7:checked ~ main [data-pip="2"],
+#s7:checked ~ main [data-pip="3"],
+#s7:checked ~ main [data-pip="4"],
+#s7:checked ~ main [data-pip="5"],
+#s7:checked ~ main [data-pip="6"] {
+  background: var(--accent);
+}
+
+/* ================================================================
+   RESPONSIVE
+   ================================================================ */
+@media (max-width: 400px) {
+  :root { --sz: 125px; --gap: 4px; }
+  section { width: 270px; height: 270px; }
+  header h1 { font-size: 2.2rem; }
 }
