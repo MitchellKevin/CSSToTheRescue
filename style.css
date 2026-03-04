@@ -270,7 +270,7 @@ input[type="radio"] { display: none; }
 /* Bovenste laag draait om Y-as (U move) */
 @keyframes rotateTopLayer {
   from { transform: translateY(-70px) rotateY(  0deg)}
-  to   { transform: translateY(-70px) rotateY(0deg); }
+  to   { transform: translateY(-70px) rotateY(90deg); }
 }
 
 /* State B bovenste laag staat al gedraaid (eindpositie A) */
@@ -302,9 +302,9 @@ input[type="radio"] { display: none; }
 
 
 /* ===== STATE A — bovenste laag draait ===== */
-#sA:checked ~ #scene #cubeState_A .layer.top {
+/* #sA:checked ~ #scene #cubeState_A .layer.top {
   animation: rotateTopLayer 2s ease-in-out forwards;
-}
+} */
 
 /* ===== STATE B — bovenste laag in eindpositie A, middelste draait ===== */
 /* #sB:checked ~ #scene #cubeState_B .layer.top {
