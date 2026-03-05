@@ -22,7 +22,7 @@ Vandaag heb ik verder gewerkt aan meerdere states (moves) te maken heb nu 9 stat
 ## Dag 7
 TODO:
 * Verticale turns maken
-* UI ontwerpen
+* UI ontwerpen![alt text](image-1.png)
 * UI maken
 
 Wat heb ik vandaag gedaan?
