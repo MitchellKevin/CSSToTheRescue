@@ -496,8 +496,8 @@ Code geschreven door Mitchell Scholte*/
 }
 
 
-/* ===== STATE B — bovenste laag draait ===== */
-#sB:checked ~ #scene #cubeState_B .layer.top {
+/* Turn Animations */
+/* #sB:checked ~ #scene #cubeState_B .layer.top {
   animation: rotateTopLayer 2s ease-in-out forwards;
 }
 
@@ -527,7 +527,7 @@ Code geschreven door Mitchell Scholte*/
 
 #sE:checked ~ #scene #cubeState_E{
   animation: spinCube 5s infinite;
-}
+} */
 
 
 /* #sA:checked ~ #scene #cubeState_A */
