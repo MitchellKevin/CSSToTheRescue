@@ -8,6 +8,21 @@ Vandaag hadden we de introductie presentatie waar ik clip-path, color-scheme en 
 
 Vandaag kregen we ook een introductie van de eindopdracht, die gaat verlopen als het volgende:
 
+## Dag 3
+
+## Dag 4
+
+## Dag 5
+Vandaag ben ik thuis gebleven, maar heb wel behoorlijke progressie geboekt ik had in de bus een brilliant idee hoe ik het probleem van meerdere onderdelen in verschillende animaties kon omzeilen. Ik had als idee om na elke animatie de kubus ontzichbaar gemaakt en de volgende state zichtbaar te maken en niet met opacity maar met diplay. Hierdoor kan ik per kubus bedenken hoe ik deze wil laten draaien. Elke state is dan ook zelf custom gemaakt op basis van de eind patroon van de vorige state. Vandaag heb ik dit gedaan voor 4 states tot een oplossing maar nog zonder animaties.
+
+## Dag 6
+Vandaag heb ik verder gewerkt aan meerdere states (moves) te maken heb nu 9 states, ik heb er vandaag dus 5 bij gemaakt verder heb ik alle horizontale turns werkend gekregen
+
+## Dag 7
+TODO:
+* Verticale turns maken
+* UI ontwerpen
+* UI maken
 
 Wat heb ik vandaag gedaan?
 Presentatie en veel geleerd van waar andere mensen aan hadden gewerkt en dan vooral de scroll animatie en :has en concept begonnen.
