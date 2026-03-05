@@ -277,32 +277,32 @@ input[type="radio"] { display: none; }
 #cubeState_E .layer > div > div:nth-child(6) { background: var(--face6); }
 
 /* STATE X Coloring*/
- #cubeState_X .layer.top > div:nth-child(1) > div { --face1: orange; --face2: red; --face3: white; --face4: yellow; --face5: blue; --face6: green;}
-  #cubeState_X .layer.top > div:nth-child(2) > div { --face1: orange; --face2: red; --face3: white; --face4: yellow; --face5: blue; --face6: green;}
-   #cubeState_X .layer.top > div:nth-child(3) > div { --face1: orange; --face2: red; --face3: white; --face4: yellow; --face5: blue; --face6: green;}
-    #cubeState_X .layer.top > div:nth-child(4) > div { --face1: orange; --face2: red; --face3: green; --face4: blue; --face5: white; --face6: yellow;}
-     #cubeState_X .layer.top > div:nth-child(5) > div { --face1: orange; --face2: red; --face3: green; --face4: blue; --face5: white; --face6: yellow;}
-      #cubeState_X .layer.top > div:nth-child(6) > div { --face1: orange; --face2: red; --face3: green; --face4: blue; --face5: white; --face6: yellow;}
-       #cubeState_X .layer.top > div:nth-child(7) > div { --face1: orange; --face2: red; --face3: green; --face4: blue; --face5: white; --face6: yellow;}
-        #cubeState_X .layer.top > div:nth-child(8) > div {  --face1: orange; --face2: red; --face3: green; --face4: blue; --face5: white; --face6: yellow;}
-         #cubeState_X .layer.top > div:nth-child(9) > div { --face1: orange; --face2: red; --face3: green; --face4: blue; --face5: white; --face6: yellow;}
-          #cubeState_X .layer.mid > div:nth-child(1) > div { --face1: orange; --face2: red; --face3: white; --face4: yellow; --face5: blue; --face6: green;}
-           #cubeState_X .layer.mid > div:nth-child(2) > div { --face1: orange; --face2: red; --face3: white; --face4: yellow; --face5: blue; --face6: green;}
-            #cubeState_X .layer.mid > div:nth-child(3) > div { --face1: orange; --face2: red; --face3: white; --face4: yellow; --face5: blue; --face6: green;}
+ #cubeState_X .layer.top > div:nth-child(1) > div { --face1: white; --face2: yellow; --face3: blue; --face4: green; --face5: orange; --face6: red;}
+  #cubeState_X .layer.top > div:nth-child(2) > div { --face1: white; --face2: yellow; --face3: blue; --face4: green; --face5: orange; --face6: red;}
+   #cubeState_X .layer.top > div:nth-child(3) > div { --face1: white; --face2: yellow; --face3: blue; --face4: green; --face5: orange; --face6: red;}
+    #cubeState_X .layer.top > div:nth-child(4) > div { --face1: white; --face2: yellow; --face3: red; --face4: orange; --face5: blue; --face6: green;}
+     #cubeState_X .layer.top > div:nth-child(5) > div {--face1: green; --face2: blue; --face3: red; --face4: orange; --face5: white; --face6: yellow;}
+      #cubeState_X .layer.top > div:nth-child(6) > div { --face1: green; --face2: blue; --face3: red; --face4: orange; --face5: white; --face6: yellow;}
+       #cubeState_X .layer.top > div:nth-child(7) > div { --face1: green; --face2: blue; --face3: yellow; --face4: white; --face5: red; --face6: orange; }
+        #cubeState_X .layer.top > div:nth-child(8) > div {  --face1: red; --face2: orange; --face3: green; --face4: blue; --face5: yellow; --face6: white;}
+         #cubeState_X .layer.top > div:nth-child(9) > div { --face1: red; --face2: orange; --face3: green; --face4: blue; --face5: yellow; --face6: white;}
+          #cubeState_X .layer.mid > div:nth-child(1) > div { --face1: orange; --face2: red; --face3: blue; --face4: green; --face5: yellow; --face6: white;}
+           #cubeState_X .layer.mid > div:nth-child(2) > div { --face1: orange; --face2: red; --face3: blue; --face4: green; --face5: yellow; --face6: white;}
+            #cubeState_X .layer.mid > div:nth-child(3) > div { --face1: blue; --face2: green; --face3: white; --face4: yellow; --face5: red; --face6: orange;}
              #cubeState_X .layer.mid > div:nth-child(4) > div { --face1: orange; --face2: red; --face3: green; --face4: blue; --face5: white; --face6: yellow;}
-               #cubeState_X .layer.mid > div:nth-child(6) > div { --face1: orange; --face2: red; --face3: green; --face4: blue; --face5: white; --face6: yellow;}
+               #cubeState_X .layer.mid > div:nth-child(6) > div { --face1: yellow; --face2: white; --face3: green;--face4: blue; --face5: orange; --face6: red; }
                 #cubeState_X .layer.mid > div:nth-child(7) > div { --face1: orange; --face2: red; --face3: green; --face4: blue; --face5: white; --face6: yellow;}
-                 #cubeState_X .layer.mid > div:nth-child(8) > div { --face1: orange; --face2: red; --face3: green; --face4: blue; --face5: white; --face6: yellow;}
-                 #cubeState_X .layer.mid > div:nth-child(9) > div { --face1: orange; --face2: red; --face3: green; --face4: blue; --face5: white; --face6: yellow;} 
-                   #cubeState_X .layer.bot > div:nth-child(1) > div { --face1: orange; --face2: red; --face3: white; --face4: yellow; --face5: blue; --face6: green;}
-                    #cubeState_X .layer.bot > div:nth-child(2) > div { --face1: orange; --face2: red; --face3: white; --face4: yellow; --face5: blue; --face6: green;}
-                     #cubeState_X .layer.bot > div:nth-child(3) > div { --face1: orange; --face2: red; --face3: white; --face4: yellow; --face5: blue; --face6: green;}
-                      #cubeState_X .layer.bot > div:nth-child(4) > div { --face1: orange; --face2: red; --face3: green; --face4: blue; --face5: white; --face6: yellow;}
-                       #cubeState_X .layer.layer.bot > div:nth-child(5) > div { --face1: orange; --face2: red; --face3: green;--face4: blue; --face5: white; --face6: yellow;}
-                        #cubeState_X .layer.bot > div:nth-child(6) > div { --face1: orange; --face2: red; --face3: green; --face4: blue; --face5: white; --face6: yellow;}
-                         #cubeState_X .layer.bot > div:nth-child(7) > div { --face1: orange; --face2: red; --face3: green; --face4: blue; --face5: white; --face6: yellow;} 
-                           #cubeState_X .layer.bot > div:nth-child(8) > div { --face1: orange; --face2: red; --face3: green; --face4: blue; --face5: white; --face6: yellow;} 
-                           #cubeState_X .layer.bot > div:nth-child(9) > div { --face1: orange; --face2: red; --face3: green; --face4: blue; --face5: white; --face6: yellow;} 
+                 #cubeState_X .layer.mid > div:nth-child(8) > div { --face1: red; --face2: orange; --face3: yellow; --face4: white; --face5: blue; --face6: green;}
+                 #cubeState_X .layer.mid > div:nth-child(9) > div { --face1: yellow; --face2: white; --face3: blue; --face4: green; --face5: red; --face6: orange;} 
+                   #cubeState_X .layer.bot > div:nth-child(1) > div { --face1: blue; --face2: green; --face3: white;--face4: yellow; --face5: red; --face6: orange;}
+                    #cubeState_X .layer.bot > div:nth-child(2) > div { --face1: green; --face2: blue; --face3: white;--face4: yellow; --face5: orange; --face6: red;}
+                     #cubeState_X .layer.bot > div:nth-child(3) > div { --face1: green; --face2: blue; --face3: white;--face4: yellow; --face5: orange; --face6: red;}
+                      #cubeState_X .layer.bot > div:nth-child(4) > div { --face1: orange; --face2: red; --face3: white; --face4: yellow; --face5: blue; --face6: green;}
+                       #cubeState_X .layer.layer.bot > div:nth-child(5) > div { --face1: green; --face2: blue; --face3: red;--face4: orange; --face5: white; --face6: yellow;}
+                        #cubeState_X .layer.bot > div:nth-child(6) > div {--face1: green; --face2: blue; --face3: red;--face4: orange; --face5: white; --face6: yellow;}
+                         #cubeState_X .layer.bot > div:nth-child(7) > div { --face1: orange; --face2: red; --face3: white; --face4: yellow; --face5: blue; --face6: green;} 
+                           #cubeState_X .layer.bot > div:nth-child(8) > div {--face1: green; --face2: blue; --face3: red;--face4: orange; --face5: white; --face6: yellow;} 
+                           #cubeState_X .layer.bot > div:nth-child(9) > div { --face1: green; --face2: blue; --face3: red;--face4: orange; --face5: white; --face6: yellow;} 
 
 
 #cubeState_X .layer > div > div:nth-child(1) { background: var(--face1); }
@@ -313,33 +313,33 @@ input[type="radio"] { display: none; }
 #cubeState_X .layer > div > div:nth-child(6) { background: var(--face6); }
 
 
-/* STATE Y Coloring */
- #cubeState_Y .layer.top > div:nth-child(1) > div { --face1: orange; --face2: red; --face3: white; --face4: yellow; --face5: blue; --face6: green;}
-  #cubeState_Y .layer.top > div:nth-child(2) > div { --face1: orange; --face2: red; --face3: white; --face4: yellow; --face5: blue; --face6: green;}
-   #cubeState_Y .layer.top > div:nth-child(3) > div { --face1: orange; --face2: red; --face3: white; --face4: yellow; --face5: blue; --face6: green;}
-    #cubeState_Y .layer.top > div:nth-child(4) > div { --face1: orange; --face2: red; --face3: green; --face4: blue; --face5: white; --face6: yellow;}
-     #cubeState_Y .layer.top > div:nth-child(5) > div { --face1: orange; --face2: red; --face3: green; --face4: blue; --face5: white; --face6: yellow;}
-      #cubeState_Y .layer.top > div:nth-child(6) > div { --face1: orange; --face2: red; --face3: green; --face4: blue; --face5: white; --face6: yellow;}
-       #cubeState_Y .layer.top > div:nth-child(7) > div { --face1: orange; --face2: red; --face3: green; --face4: blue; --face5: white; --face6: yellow;}
-        #cubeState_Y .layer.top > div:nth-child(8) > div {  --face1: orange; --face2: red; --face3: green; --face4: blue; --face5: white; --face6: yellow;}
-         #cubeState_Y .layer.top > div:nth-child(9) > div { --face1: orange; --face2: red; --face3: green; --face4: blue; --face5: white; --face6: yellow;}
-          #cubeState_Y .layer.mid > div:nth-child(1) > div { --face1: orange; --face2: red; --face3: white; --face4: yellow; --face5: blue; --face6: green;}
-           #cubeState_Y .layer.mid > div:nth-child(2) > div { --face1: orange; --face2: red; --face3: white; --face4: yellow; --face5: blue; --face6: green;}
-            #cubeState_Y .layer.mid > div:nth-child(3) > div { --face1: orange; --face2: red; --face3: white; --face4: yellow; --face5: blue; --face6: green;}
+/* STATE Y Coloring*/
+ #cubeState_Y .layer.top > div:nth-child(1) > div { --face1: blue; --face2: green; --face3: yellow; --face4: white; --face5: orange; --face6: red;}
+  #cubeState_Y .layer.top > div:nth-child(2) > div { --face1: red; --face2: orange; --face3: blue; --face4: green; --face5: white; --face6: yellow;}
+   #cubeState_Y .layer.top > div:nth-child(3) > div { --face1: green; --face2: blue; --face3: orange; --face4: red; --face5: yellow; --face6: white;}
+    #cubeState_Y .layer.top > div:nth-child(4) > div { --face1: blue; --face2: green; --face3: yellow; --face4: white; --face5: orange; --face6: red;}
+     #cubeState_Y .layer.top > div:nth-child(5) > div {--face1: red; --face2: orange; --face3: blue; --face4: green; --face5: white; --face6: yellow;}
+      #cubeState_Y .layer.top > div:nth-child(6) > div { --face1: green; --face2: blue; --face3: orange; --face4: red; --face5: yellow; --face6: white;}
+       #cubeState_Y .layer.top > div:nth-child(7) > div { --face1: blue; --face2: green; --face3: yellow; --face4: white; --face5: orange; --face6: red; }
+        #cubeState_Y .layer.top > div:nth-child(8) > div {  --face1: red; --face2: orange; --face3: yellow; --face4: white; --face5: blue; --face6: green;}
+         #cubeState_Y .layer.top > div:nth-child(9) > div { --face1: yellow; --face2: white; --face3: blue; --face4: green; --face5: red; --face6: orange;}
+          #cubeState_Y .layer.mid > div:nth-child(1) > div { --face1: orange; --face2: red; --face3: blue; --face4: green; --face5: yellow; --face6: white;}
+           #cubeState_Y .layer.mid > div:nth-child(2) > div { --face1: orange; --face2: red; --face3: blue; --face4: green; --face5: yellow; --face6: white;}
+            #cubeState_Y .layer.mid > div:nth-child(3) > div { --face1: blue; --face2: green; --face3: white; --face4: yellow; --face5: red; --face6: orange;}
              #cubeState_Y .layer.mid > div:nth-child(4) > div { --face1: orange; --face2: red; --face3: green; --face4: blue; --face5: white; --face6: yellow;}
-               #cubeState_Y .layer.mid > div:nth-child(6) > div { --face1: orange; --face2: red; --face3: green; --face4: blue; --face5: white; --face6: yellow;}
+               #cubeState_Y .layer.mid > div:nth-child(6) > div { --face1: yellow; --face2: white; --face3: green;--face4: blue; --face5: orange; --face6: red; }
                 #cubeState_Y .layer.mid > div:nth-child(7) > div { --face1: orange; --face2: red; --face3: green; --face4: blue; --face5: white; --face6: yellow;}
-                 #cubeState_Y .layer.mid > div:nth-child(8) > div { --face1: orange; --face2: red; --face3: green; --face4: blue; --face5: white; --face6: yellow;}
-                 #cubeState_Y .layer.mid > div:nth-child(9) > div { --face1: orange; --face2: red; --face3: green; --face4: blue; --face5: white; --face6: yellow;} 
-                   #cubeState_Y .layer.bot > div:nth-child(1) > div { --face1: orange; --face2: red; --face3: white; --face4: yellow; --face5: blue; --face6: green;}
-                    #cubeState_Y .layer.bot > div:nth-child(2) > div { --face1: orange; --face2: red; --face3: white; --face4: yellow; --face5: blue; --face6: green;}
-                     #cubeState_Y .layer.bot > div:nth-child(3) > div { --face1: orange; --face2: red; --face3: white; --face4: yellow; --face5: blue; --face6: green;}
-                      #cubeState_Y .layer.bot > div:nth-child(4) > div { --face1: orange; --face2: red; --face3: green; --face4: blue; --face5: white; --face6: yellow;}
-                       #cubeState_Y .layer.layer.bot > div:nth-child(5) > div { --face1: orange; --face2: red; --face3: green;--face4: blue; --face5: white; --face6: yellow;}
-                        #cubeState_Y .layer.bot > div:nth-child(6) > div { --face1: orange; --face2: red; --face3: green; --face4: blue; --face5: white; --face6: yellow;}
-                         #cubeState_Y .layer.bot > div:nth-child(7) > div { --face1: orange; --face2: red; --face3: green; --face4: blue; --face5: white; --face6: yellow;} 
-                           #cubeState_Y .layer.bot > div:nth-child(8) > div { --face1: orange; --face2: red; --face3: green; --face4: blue; --face5: white; --face6: yellow;} 
-                           #cubeState_Y .layer.bot > div:nth-child(9) > div { --face1: orange; --face2: red; --face3: green; --face4: blue; --face5: white; --face6: yellow;} 
+                 #cubeState_Y .layer.mid > div:nth-child(8) > div { --face1: red; --face2: orange; --face3: yellow; --face4: white; --face5: blue; --face6: green;}
+                 #cubeState_Y .layer.mid > div:nth-child(9) > div { --face1: yellow; --face2: white; --face3: blue; --face4: green; --face5: red; --face6: orange;} 
+                   #cubeState_Y .layer.bot > div:nth-child(1) > div { --face1: blue; --face2: green; --face3: white;--face4: yellow; --face5: red; --face6: orange;}
+                    #cubeState_Y .layer.bot > div:nth-child(2) > div { --face1: green; --face2: blue; --face3: white;--face4: yellow; --face5: orange; --face6: red;}
+                     #cubeState_Y .layer.bot > div:nth-child(3) > div { --face1: green; --face2: blue; --face3: white;--face4: yellow; --face5: orange; --face6: red;}
+                      #cubeState_Y .layer.bot > div:nth-child(4) > div { --face1: orange; --face2: red; --face3: white; --face4: yellow; --face5: blue; --face6: green;}
+                       #cubeState_Y .layer.layer.bot > div:nth-child(5) > div { --face1: green; --face2: blue; --face3: red;--face4: orange; --face5: white; --face6: yellow;}
+                        #cubeState_Y .layer.bot > div:nth-child(6) > div {--face1: green; --face2: blue; --face3: red;--face4: orange; --face5: white; --face6: yellow;}
+                         #cubeState_Y .layer.bot > div:nth-child(7) > div { --face1: orange; --face2: red; --face3: white; --face4: yellow; --face5: blue; --face6: green;} 
+                           #cubeState_Y .layer.bot > div:nth-child(8) > div {--face1: green; --face2: blue; --face3: red;--face4: orange; --face5: white; --face6: yellow;} 
+                           #cubeState_Y .layer.bot > div:nth-child(9) > div { --face1: green; --face2: blue; --face3: red;--face4: orange; --face5: white; --face6: yellow;} 
 
 
 #cubeState_Y .layer > div > div:nth-child(1) { background: var(--face1); }
@@ -349,33 +349,34 @@ input[type="radio"] { display: none; }
 #cubeState_Y .layer > div > div:nth-child(5) { background: var(--face5); }
 #cubeState_Y .layer > div > div:nth-child(6) { background: var(--face6); }
 
+
 /* STATE Z Coloring*/
- #cubeState_Z .layer.top > div:nth-child(1) > div { --face1: orange; --face2: red; --face3: white; --face4: yellow; --face5: blue; --face6: green;}
-  #cubeState_Z .layer.top > div:nth-child(2) > div { --face1: orange; --face2: red; --face3: white; --face4: yellow; --face5: blue; --face6: green;}
-   #cubeState_Z .layer.top > div:nth-child(3) > div { --face1: orange; --face2: red; --face3: white; --face4: yellow; --face5: blue; --face6: green;}
-    #cubeState_Z .layer.top > div:nth-child(4) > div { --face1: orange; --face2: red; --face3: green; --face4: blue; --face5: white; --face6: yellow;}
-     #cubeState_Z .layer.top > div:nth-child(5) > div { --face1: orange; --face2: red; --face3: green; --face4: blue; --face5: white; --face6: yellow;}
-      #cubeState_Z .layer.top > div:nth-child(6) > div { --face1: orange; --face2: red; --face3: green; --face4: blue; --face5: white; --face6: yellow;}
-       #cubeState_Z .layer.top > div:nth-child(7) > div { --face1: orange; --face2: red; --face3: green; --face4: blue; --face5: white; --face6: yellow;}
-        #cubeState_Z .layer.top > div:nth-child(8) > div {  --face1: orange; --face2: red; --face3: green; --face4: blue; --face5: white; --face6: yellow;}
-         #cubeState_Z .layer.top > div:nth-child(9) > div { --face1: orange; --face2: red; --face3: green; --face4: blue; --face5: white; --face6: yellow;}
-          #cubeState_Z .layer.mid > div:nth-child(1) > div { --face1: orange; --face2: red; --face3: white; --face4: yellow; --face5: blue; --face6: green;}
-           #cubeState_Z .layer.mid > div:nth-child(2) > div { --face1: orange; --face2: red; --face3: white; --face4: yellow; --face5: blue; --face6: green;}
-            #cubeState_Z .layer.mid > div:nth-child(3) > div { --face1: orange; --face2: red; --face3: white; --face4: yellow; --face5: blue; --face6: green;}
+ #cubeState_Z .layer.top > div:nth-child(1) > div { --face1: orange; --face2: red; --face3: blue; --face4: green; --face5: yellow; --face6: white;}
+  #cubeState_Z .layer.top > div:nth-child(2) > div { --face1: orange; --face2: red; --face3: blue; --face4: green; --face5: yellow; --face6: white;}
+   #cubeState_Z .layer.top > div:nth-child(3) > div { --face1: blue; --face2: green; --face3: white; --face4: yellow; --face5: red; --face6: orange;}
+    #cubeState_Z .layer.top > div:nth-child(4) > div { --face1: blue; --face2: green; --face3: orange; --face4: red; --face5: white; --face6: yellow;}
+     #cubeState_Z .layer.top > div:nth-child(5) > div { --face1: blue; --face2: green; --face3: orange; --face4: red; --face5: white; --face6: yellow;}
+      #cubeState_Z .layer.top > div:nth-child(6) > div { --face1: yellow; --face2: white; --face3: orange; --face4: red; --face5: blue; --face6: green;}
+       #cubeState_Z .layer.top > div:nth-child(7) > div { --face1: yellow; --face2: white; --face3: green; --face4: blue; --face5: orange; --face6: red;}
+        #cubeState_Z .layer.top > div:nth-child(8) > div {  --face1: yellow; --face2: white; --face3: green; --face4: blue; --face5: orange; --face6: red;}
+         #cubeState_Z .layer.top > div:nth-child(9) > div { --face1: yellow; --face2: white; --face3: green; --face4: blue; --face5: orange; --face6: red;}
+          #cubeState_Z .layer.mid > div:nth-child(1) > div { --face1: orange; --face2: red; --face3: blue; --face4: green; --face5: yellow; --face6: white;}
+           #cubeState_Z .layer.mid > div:nth-child(2) > div { --face1: orange; --face2: red; --face3: blue; --face4: green; --face5: yellow; --face6: white;}
+            #cubeState_Z .layer.mid > div:nth-child(3) > div { --face1: blue; --face2: green; --face3: white; --face4: yellow; --face5: red; --face6: orange;}
              #cubeState_Z .layer.mid > div:nth-child(4) > div { --face1: orange; --face2: red; --face3: green; --face4: blue; --face5: white; --face6: yellow;}
-               #cubeState_Z .layer.mid > div:nth-child(6) > div { --face1: orange; --face2: red; --face3: green; --face4: blue; --face5: white; --face6: yellow;}
+               #cubeState_Z .layer.mid > div:nth-child(6) > div { --face1: yellow; --face2: white; --face3: green;--face4: blue; --face5: orange; --face6: red; }
                 #cubeState_Z .layer.mid > div:nth-child(7) > div { --face1: orange; --face2: red; --face3: green; --face4: blue; --face5: white; --face6: yellow;}
                  #cubeState_Z .layer.mid > div:nth-child(8) > div { --face1: orange; --face2: red; --face3: green; --face4: blue; --face5: white; --face6: yellow;}
-                 #cubeState_Z .layer.mid > div:nth-child(9) > div { --face1: orange; --face2: red; --face3: green; --face4: blue; --face5: white; --face6: yellow;} 
-                   #cubeState_Z .layer.bot > div:nth-child(1) > div { --face1: orange; --face2: red; --face3: white; --face4: yellow; --face5: blue; --face6: green;}
-                    #cubeState_Z .layer.bot > div:nth-child(2) > div { --face1: orange; --face2: red; --face3: white; --face4: yellow; --face5: blue; --face6: green;}
-                     #cubeState_Z .layer.bot > div:nth-child(3) > div { --face1: orange; --face2: red; --face3: white; --face4: yellow; --face5: blue; --face6: green;}
-                      #cubeState_Z .layer.bot > div:nth-child(4) > div { --face1: orange; --face2: red; --face3: green; --face4: blue; --face5: white; --face6: yellow;}
-                       #cubeState_Z .layer.layer.bot > div:nth-child(5) > div { --face1: orange; --face2: red; --face3: green;--face4: blue; --face5: white; --face6: yellow;}
-                        #cubeState_Z .layer.bot > div:nth-child(6) > div { --face1: orange; --face2: red; --face3: green; --face4: blue; --face5: white; --face6: yellow;}
-                         #cubeState_Z .layer.bot > div:nth-child(7) > div { --face1: orange; --face2: red; --face3: green; --face4: blue; --face5: white; --face6: yellow;} 
-                           #cubeState_Z .layer.bot > div:nth-child(8) > div { --face1: orange; --face2: red; --face3: green; --face4: blue; --face5: white; --face6: yellow;} 
-                           #cubeState_Z .layer.bot > div:nth-child(9) > div { --face1: orange; --face2: red; --face3: green; --face4: blue; --face5: white; --face6: yellow;} 
+                 #cubeState_Z .layer.mid > div:nth-child(9) > div { --face1: yellow; --face2: white; --face3: green; --face4: blue; --face5: orange; --face6: red;} 
+                   #cubeState_Z .layer.bot > div:nth-child(1) > div { --face1: blue; --face2: green; --face3: white;--face4: yellow; --face5: red; --face6: orange;}
+                    #cubeState_Z .layer.bot > div:nth-child(2) > div { --face1: green; --face2: blue; --face3: white;--face4: yellow; --face5: orange; --face6: red;}
+                     #cubeState_Z .layer.bot > div:nth-child(3) > div { --face1: green; --face2: blue; --face3: white;--face4: yellow; --face5: orange; --face6: red;}
+                      #cubeState_Z .layer.bot > div:nth-child(4) > div { --face1: orange; --face2: red; --face3: white; --face4: yellow; --face5: blue; --face6: green;}
+                       #cubeState_Z .layer.layer.bot > div:nth-child(5) > div { --face1: green; --face2: blue; --face3: red;--face4: orange; --face5: white; --face6: yellow;}
+                        #cubeState_Z .layer.bot > div:nth-child(6) > div {--face1: green; --face2: blue; --face3: red;--face4: orange; --face5: white; --face6: yellow;}
+                         #cubeState_Z .layer.bot > div:nth-child(7) > div { --face1: orange; --face2: red; --face3: white; --face4: yellow; --face5: blue; --face6: green;} 
+                           #cubeState_Z .layer.bot > div:nth-child(8) > div {--face1: green; --face2: blue; --face3: red;--face4: orange; --face5: white; --face6: yellow;} 
+                           #cubeState_Z .layer.bot > div:nth-child(9) > div { --face1: green; --face2: blue; --face3: red;--face4: orange; --face5: white; --face6: yellow;} 
 
 
 #cubeState_Z .layer > div > div:nth-child(1) { background: var(--face1); }
