@@ -16,7 +16,8 @@ Vandaag kregen we ook een introductie van de eindopdracht, die gaat verlopen als
 Vandaag ben ik thuis gebleven, maar heb wel behoorlijke progressie geboekt ik had in de bus een brilliant idee hoe ik het probleem van meerdere onderdelen in verschillende animaties kon omzeilen. Ik had als idee om na elke animatie de kubus ontzichbaar gemaakt en de volgende state zichtbaar te maken en niet met opacity maar met diplay. Hierdoor kan ik per kubus bedenken hoe ik deze wil laten draaien. Elke state is dan ook zelf custom gemaakt op basis van de eind patroon van de vorige state. Vandaag heb ik dit gedaan voor 4 states tot een oplossing maar nog zonder animaties.
 
 ## Dag 6
-Vandaag heb ik verder gewerkt aan meerdere states (moves) te maken heb nu 9 states, ik heb er vandaag dus 5 bij gemaakt verder heb ik alle horizontale turns werkend gekregen
+Vandaag heb ik verder gewerkt aan meerdere states (moves) te maken heb nu 9 states, ik heb er vandaag dus 5 bij gemaakt verder heb ik alle horizontale turns werkend gekregen en een paar andere kleine dingen. En heb ik geconceptualiseerd op hoe ik mijn blog wil maken en ben hier opgekomen:
+![alt text](image.png)
 
 ## Dag 7
 TODO:
