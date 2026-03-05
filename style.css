@@ -54,6 +54,10 @@ h2 {
   top: 50%;
 }
 
+#cubeState_A{
+  transform: rotateX(-30deg) rotateY(30deg) rotateZ(90deg) translateY(-61px);
+}
+
 #sV:checked ~ #scene #cubeState_V { display: block; }
 #sX:checked ~ #scene #cubeState_X { display: block; }
 #sY:checked ~ #scene #cubeState_Y { display: block; }
@@ -483,6 +487,11 @@ h2 {
 #sB:checked ~ #scene #cubeState_B .layer.top {
   animation: rotateTopLayer 2s ease-in-out forwards;
 }
+
+#sA:checked ~ #scene #cubeState_A .layer.top {
+  animation: rotateTopLayer 2s ease-in-out forwards;
+}
+
 
 #sX:checked ~ #scene #cubeState_X .layer.top{
   animation: rotateTopLayer 2s ease-in-out forwards;
