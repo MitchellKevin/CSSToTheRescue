@@ -497,7 +497,7 @@ Code geschreven door Mitchell Scholte*/
 
 
 /* Turn Animations */
-/* #sB:checked ~ #scene #cubeState_B .layer.top {
+#sB:checked ~ #scene #cubeState_B .layer.top {
   animation: rotateTopLayer 2s ease-in-out forwards;
 }
 
@@ -527,7 +527,7 @@ Code geschreven door Mitchell Scholte*/
 
 #sE:checked ~ #scene #cubeState_E{
   animation: spinCube 5s infinite;
-} */
+}
 
 
 /* #sA:checked ~ #scene #cubeState_A */
