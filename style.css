@@ -56,8 +56,11 @@ h2 {
 }
 
 #cubeState_A{
-  transform: rotateX(-30deg) rotateY(30deg) rotateZ(90deg) translateY(-61px);
+  transform: rotateX(-30deg) rotateY(-60deg) rotateZ(90deg) translateY(0px)
+  translateZ(-50px) translateX(20px);
 }
+
+
 
 #sV:checked ~ #scene #cubeState_V { display: block; }
 #sX:checked ~ #scene #cubeState_X { display: block; }
