@@ -1,12 +1,14 @@
 /* ===== RESET / SCENE ===== */
 body {
-  margin: 0;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  margin:0;
+  font-family:sans-serif;
+  background:#222;
+  color:white;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
   justify-content: center;
-  background: #222;
+  height: 100vh;
 }
 
 input[type="radio"] { display: none; }
@@ -15,9 +17,6 @@ input[type="radio"] { display: none; }
   width: min(90vw, 90vh);
   height: min(90vw, 90vh);
   perspective: 1200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   z-index: 1;
 }
 
@@ -36,6 +35,8 @@ input[type="radio"] { display: none; }
   height: 0;
   transform-style: preserve-3d;
   transform: rotateX(-30deg) rotateY(30deg);
+  left: 45%;
+  top: 50%;
 }
 
 #sX:checked ~ #scene #cubeState_X { display: block; }
