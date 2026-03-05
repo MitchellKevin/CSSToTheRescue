@@ -12,11 +12,13 @@ body {
 input[type="radio"] { display: none; }
 
 #scene {
-  width: 300px;
-  height: 300px;
-  perspective: 1000px;
-  overflow: visible;
-  transform: left(-50%) right 50%;
+  width: min(90vw, 90vh);
+  height: min(90vw, 90vh);
+  perspective: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
 }
 
 /* ===== CUBE STATES — verborgen standaard ===== */
