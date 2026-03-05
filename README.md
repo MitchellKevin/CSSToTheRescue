@@ -17,12 +17,12 @@ Vandaag ben ik thuis gebleven, maar heb wel behoorlijke progressie geboekt ik ha
 
 ## Dag 6
 Vandaag heb ik verder gewerkt aan meerdere states (moves) te maken heb nu 9 states, ik heb er vandaag dus 5 bij gemaakt verder heb ik alle horizontale turns werkend gekregen en een paar andere kleine dingen. En heb ik geconceptualiseerd op hoe ik mijn blog wil maken en ben hier opgekomen:
-![alt text](image.png)
+![alt text](/img/image.png)
 
 ## Dag 7
 TODO:
 * Verticale turns maken
-* UI ontwerpen![alt text](image-1.png)
+* UI ontwerpen![alt text](/img/image-1.png)
 * UI maken
 
 Wat heb ik vandaag gedaan?
