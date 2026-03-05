@@ -229,7 +229,8 @@ h2 {
 #cubeState_C .layer > div > div:nth-child(5) { background: var(--face5); }
 #cubeState_C .layer > div > div:nth-child(6) { background: var(--face6); }
 
-/* STATE D Coloring*/
+/* STATE D Coloring
+Code geschreven door Mitchell Scholte*/
 #cubeState_D .layer.top > div:nth-child(1) > div { --face1: orange; --face2: red; --face3: white; --face4: yellow; --face5: blue; --face6: green;}
 #cubeState_D .layer.top > div:nth-child(2) > div { --face1: orange; --face2: red; --face3: white; --face4: yellow; --face5: blue; --face6: green;}
 #cubeState_D .layer.top > div:nth-child(3) > div { --face1: orange; --face2: red; --face3: white; --face4: yellow; --face5: blue; --face6: green;}
