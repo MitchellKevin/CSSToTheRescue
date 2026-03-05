@@ -39,8 +39,8 @@ h2 {
 #cubeState_A,
 #cubeState_B,
 #cubeState_C,
-#cubeState_D,
 #cubeState_E,
+#cubeState_D,
 #cubeState_X,
 #cubeState_Y,
 #cubeState_Z,
@@ -55,12 +55,15 @@ h2 {
   top: 50%;
 }
 
-#cubeState_A{
+#cubeState_A,
+#cubeState_D {
   transform: rotateX(-30deg) rotateY(-60deg) rotateZ(90deg) translateY(0px)
   translateZ(-50px) translateX(20px);
 }
 
-
+#cubeState_C{
+  transform: rotateX(-30deg) rotateY(30deg) rotateZ(90deg) translateY(-61px);
+}
 
 #sV:checked ~ #scene #cubeState_V { display: block; }
 #sX:checked ~ #scene #cubeState_X { display: block; }
@@ -460,6 +463,11 @@ Code geschreven door Mitchell Scholte*/
   to   { transform: translateY(-70px) translateX(31px) translateZ(-31px)rotateY(-90deg); }
 }
 
+@keyframes rotateTopLayerRevers{
+   from { transform: translateY(-70px) rotateY(  0deg)}
+  to   { transform: translateY(-70px) translateX(31px) translateZ(31px)rotateY(90deg); }
+}
+
 /* State B bovenste laag staat al gedraaid (eindpositie A) */
 /* Onderste laag draait om Y-as (U' move) */
 @keyframes rotateBottomLayer {
@@ -497,6 +505,13 @@ Code geschreven door Mitchell Scholte*/
   animation: rotateTopLayer 2s ease-in-out forwards;
 }
 
+#sC:checked ~ #scene #cubeState_C .layer.top {
+  animation: rotateTopLayerRevers 2s ease-in-out forwards;
+}
+
+#sD:checked ~ #scene #cubeState_D .layer.top {
+  animation: rotateTopLayerRevers 2s ease-in-out forwards;
+}
 
 #sX:checked ~ #scene #cubeState_X .layer.top{
   animation: rotateTopLayer 2s ease-in-out forwards;
