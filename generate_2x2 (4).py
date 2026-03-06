@@ -93,10 +93,10 @@ class Rubiks2x2Generator:
     def generate_html(self, states_data):
         """Generate HTML with states for 7 moves"""
         
-        # Max possible states: roughly 4^7 but we limit to available
-        max_states = min(2000, len(states_data))
+        # Use all available states
+        max_states = len(states_data)
         
-        print(f"Building state index for {max_states} states (allows 7 moves)...")
+        print(f"Building state index for {max_states} states (allows 7+ moves)...")
         for idx, state_data in enumerate(states_data[:max_states]):
             key = self.state_to_key(state_data['state'])
             self.state_to_index[key] = idx
