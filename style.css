@@ -17019,15 +17019,10 @@ h1 {
 }
 
 /* Move button colors */
-.move-L { border-color: #00ff00; color: #00ff00; }
-.move-R { border-color: #00ffff; color: #00ffff; }
-.move-U { border-color: #ffff00; color: #ffff00; }
-.move-B { border-color: #ff00ff; color: #ff00ff; }
-
-.move-L:hover { background: rgba(0, 255, 0, 0.1); }
-.move-R:hover { background: rgba(0, 255, 255, 0.1); }
-.move-U:hover { background: rgba(255, 255, 0, 0.1); }
-.move-B:hover { background: rgba(255, 0, 255, 0.1); }
+.move-L { border-color: #a2a2a2; color: #ffffff; }
+.move-R { border-color: #a2a2a2; color: #ffffff; }
+.move-U { border-color: #a2a2a2; color: #ffffff; }
+.move-B { border-color: #a2a2a2; color: #ffffff; }
 
 /* Hide radio inputs */
 input[type="radio"] { display: none; }
