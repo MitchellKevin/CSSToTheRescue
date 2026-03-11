@@ -614,7 +614,7 @@ Code geschreven door Mitchell Scholte*/
 .layer.center { transform: translateX(  0px); }
 .layer.right { transform: translateX( 70px); } */
 
-/* ===== CUBIES (div binnen layer) ===== */
+
 .layer > div {
   position: absolute;
   width: 90px;
@@ -651,11 +651,11 @@ Code geschreven door Mitchell Scholte*/
 
 
 #cubeState_preview .layer > div > div:nth-child(1) { background: red; }
-#cubeState_preview .layer > div > div:nth-child(2) { background: red; }
-#cubeState_preview .layer > div > div:nth-child(3) { background: red; }
-#cubeState_preview .layer > div > div:nth-child(4) { background: red; }
-#cubeState_preview .layer > div > div:nth-child(5) { background: red; }
-#cubeState_preview .layer > div > div:nth-child(6) { background: red; }
+#cubeState_preview .layer > div > div:nth-child(2) { background: orange; }
+#cubeState_preview .layer > div > div:nth-child(3) { background: blue; }
+#cubeState_preview .layer > div > div:nth-child(4) { background: green; }
+#cubeState_preview .layer > div > div:nth-child(5) { background: white; }
+#cubeState_preview .layer > div > div:nth-child(6) { background: yellow; }
 
 }
 
