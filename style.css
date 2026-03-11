@@ -606,9 +606,9 @@ Code geschreven door Mitchell Scholte*/
   transform-style: preserve-3d;
 }
 
-.layer.top { transform: translateY(-70px); }
+.layer.top { transform: translateY(-60px); }
 .layer.mid { transform: translateY(  0px); }
-.layer.bot { transform: translateY( 70px); }
+.layer.bot { transform: translateY( 60px); }
 
 /* .layer.left { transform: translateX(-70px); }
 .layer.center { transform: translateX(  0px); }
@@ -624,20 +624,20 @@ Code geschreven door Mitchell Scholte*/
 }
 
 /* X posities */
-.layer > div:nth-child(3n+1) { --x: -70px;}
+.layer > div:nth-child(3n+1) { --x: -60px;}
 .layer > div:nth-child(3n+2) { --x:   0px; }
-.layer > div:nth-child(3n)   { --x:  70px; }
+.layer > div:nth-child(3n)   { --x:  60px; }
 
 /* Z posities */
-.layer > div:nth-child(-n+3)            { --z:  70px; } /* voorste rij  */
+.layer > div:nth-child(-n+3)            { --z:  60px; } /* voorste rij  */
 .layer > div:nth-child(n+4):nth-child(-n+6) { --z:   0px; } /* middelste rij */
-.layer > div:nth-child(n+7)             { --z: -70px; } /* achterste rij */
+.layer > div:nth-child(n+7)             { --z: -60px; } /* achterste rij */
 
 /* ===== FACES ===== */
 .layer > div > div {
   position: absolute;
-  width: 60px;
-  height: 60px;
+  width: 30px;
+  height: 30px;
   border: 1.5px solid rgb(0, 0, 0);
   backface-visibility: hidden;
 }
