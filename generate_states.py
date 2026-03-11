@@ -58,12 +58,13 @@ class RubiksCubeGenerator:
     def moveB(self, state):
         """Bottom turn clockwise (looking from bottom)"""
         temp = [state[2][2], state[2][3]]
-        state[2][2], state[2][3] = state[4][2], state[4][3]
-        state[4][2], state[4][3] = state[3][3], state[3][2]
-        state[3][3], state[3][2] = state[5][2], state[5][3]
-        state[5][2], state[5][3] = temp[0], temp[1]
+        state[2][2], state[2][3] = state[5][2], state[5][3]
+        state[5][2], state[5][3] = state[3][3], state[3][2]
+        state[3][3], state[3][2] = state[4][2], state[4][3]
+        state[4][2], state[4][3] = temp[0], temp[1]
         state[1] = [state[1][2], state[1][0], state[1][3], state[1][1]]
     
+
     def state_to_tuple(self, state):
         """Convert state to tuple for hashing"""
         return tuple(tuple(face) for face in state)
