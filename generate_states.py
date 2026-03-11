@@ -69,7 +69,7 @@ class RubiksCubeGenerator:
         """Convert state to tuple for hashing"""
         return tuple(tuple(face) for face in state)
     
-    def generate_all_states(self, max_depth=7):
+    def generate_all_states(self, max_depth=10):
         """Generate all states reachable in max_depth moves using BFS"""
         
         # Solved cube
