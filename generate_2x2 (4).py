@@ -358,7 +358,7 @@ input[type="radio"] {{ display: none; }}
         html += '    <div class="cubie b-tl">\n'
         html += f'      <div class="face face-back" style="background:{self.get_color(state[3][3])}"></div>\n'
         html += f'      <div class="face face-top" style="background:{self.get_color(state[0][2])}"></div>\n'
-        html += f'      <div class="face face-left" style="background:{self.get_color(state[5][3])}"></div>\n'
+        html += f'      <div class="face face-left" style="background:{self.get_color(state[5][1])}"></div>\n'
         html += '    </div>\n'
         
         html += '    <div class="cubie b-tr">\n'
@@ -370,7 +370,7 @@ input[type="radio"] {{ display: none; }}
         html += '    <div class="cubie b-bl">\n'
         html += f'      <div class="face face-back" style="background:{self.get_color(state[3][1])}"></div>\n'
         html += f'      <div class="face face-bottom" style="background:{self.get_color(state[1][2])}"></div>\n'
-        html += f'      <div class="face face-left" style="background:{self.get_color(state[5][1])}"></div>\n'
+        html += f'      <div class="face face-left" style="background:{self.get_color(state[5][3])}"></div>\n'
         html += '    </div>\n'
         
         html += '    <div class="cubie b-br">\n'
