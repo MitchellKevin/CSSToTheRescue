@@ -84,3 +84,16 @@ transport ... protocol = vooral voor foutcontrole, UDP doet geen foutcontrole
 Mosaic 1993 > Netscape 1994 was hetzelfde als mosaic maar dan commercieel. > Internet Explorer 1995 en die was gratis > Opera 1995 was toen beter in CSS, maar waren niet helemaal cijfer en was betaald > IE 5 Mac 2000 > Konqueror werd later Safari> Safari 2003 heeft als rendering engine webkit > Firefox 2004 is een soort opvolger netscape 4 > Safari IOS 2007 eerst mobiel ecosysteem > Chrome 2008 apple wilde niks toevoegen aan webkit en was google hun eigen rendering engine gestart, wat blink was > Flow 2020 heeft een eigen rendering engine > ladybird 2024 > Igalia spaans opensource bedrijf, heeft grid bedacht, zijn geen browser maken maar heeft er wel veel verstand van. 
 
 worldwideweb.cern.ch laat de eerste website zien
+
+## Dag 8 
+Wat heb ik gedaan vandaag?:
+* vandaag de volledig interactieve 2x2 werkend gekregen
+* Gestart met de layout voor de 3x3
+
+Hoelang heeft het me gekost?:
+Dit heeft me de hele dag geduurd
+
+TODO voor morgen
+* Layout afmaken
+* switch tussen de 2x2 en 3x3 werkend gekregen
+* Preview van de cube in het klein maken en toevoegen
