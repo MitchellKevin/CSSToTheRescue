@@ -579,6 +579,86 @@ Code geschreven door Mitchell Scholte*/
   justify-content: space-evenly;
 }
 
+.controlPanel{
+    #scene {
+  width: min(90vw, 90vh);
+  height: min(90vw, 90vh);
+  perspective: 1200px;
+  z-index: 1;
+}
+
+/* ===== CUBE STATES — verborgen standaard ===== */
+/* Bron: https://webcode.tools/css-generator/rotate#google_vignette */
+#cubeState_preview {
+  display: block;
+  position: relative;
+  width: 0;
+  height: 0;
+  transform-style: preserve-3d;
+  transform: rotateX(-30deg) rotateY(30deg);
+  left: 45%;
+  top: 50%;
+}
+.layer {
+  position: absolute;
+  width: 0;
+  height: 0;
+  transform-style: preserve-3d;
+}
+
+.layer.top { transform: translateY(-70px); }
+.layer.mid { transform: translateY(  0px); }
+.layer.bot { transform: translateY( 70px); }
+
+/* .layer.left { transform: translateX(-70px); }
+.layer.center { transform: translateX(  0px); }
+.layer.right { transform: translateX( 70px); } */
+
+/* ===== CUBIES (div binnen layer) ===== */
+.layer > div {
+  position: absolute;
+  width: 90px;
+  height: 60px;
+  transform-style: preserve-3d;
+  transform: translate3d(var(--x), 0px, var(--z));
+}
+
+/* X posities */
+.layer > div:nth-child(3n+1) { --x: -70px;}
+.layer > div:nth-child(3n+2) { --x:   0px; }
+.layer > div:nth-child(3n)   { --x:  70px; }
+
+/* Z posities */
+.layer > div:nth-child(-n+3)            { --z:  70px; } /* voorste rij  */
+.layer > div:nth-child(n+4):nth-child(-n+6) { --z:   0px; } /* middelste rij */
+.layer > div:nth-child(n+7)             { --z: -70px; } /* achterste rij */
+
+/* ===== FACES ===== */
+.layer > div > div {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border: 1.5px solid rgb(0, 0, 0);
+  backface-visibility: hidden;
+}
+
+.layer > div > div:nth-child(1) { transform: translateZ(30px); }
+.layer > div > div:nth-child(2) { transform: rotateY(180deg) translateZ(30px); }
+.layer > div > div:nth-child(3) { transform: rotateY( 90deg) translateZ(30px); }
+.layer > div > div:nth-child(4) { transform: rotateY(-90deg) translateZ(30px); }
+.layer > div > div:nth-child(5) { transform: rotateX( 90deg) translateZ(30px); }
+.layer > div > div:nth-child(6) { transform: rotateX(-90deg) translateZ(30px); }
+
+
+#cubeState_preview .layer > div > div:nth-child(1) { background: red; }
+#cubeState_preview .layer > div > div:nth-child(2) { background: red; }
+#cubeState_preview .layer > div > div:nth-child(3) { background: red; }
+#cubeState_preview .layer > div > div:nth-child(4) { background: red; }
+#cubeState_preview .layer > div > div:nth-child(5) { background: red; }
+#cubeState_preview .layer > div > div:nth-child(6) { background: red; }
+
+}
+
 #controls > label {
   display: flex;
   align-items: center;
