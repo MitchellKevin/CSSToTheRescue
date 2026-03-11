@@ -5,11 +5,15 @@ body {
   font-family:sans-serif;
   background:#222;
   color:white;
-  display:flex;
-  flex-direction:column;
+  height: 100vh;
+}
+
+main{
+ height: 90vh;
+    display:flex;
+  flex-direction:row;
   align-items:center;
   justify-content: center;
-  height: 100vh;
 }
 
 input[type="radio"] { display: none; }
@@ -26,7 +30,7 @@ h2 {
   text-align: center;
   
 }
-
+.cube{
 #scene {
   width: min(90vw, 90vh);
   height: min(90vw, 90vh);
@@ -456,7 +460,7 @@ Code geschreven door Mitchell Scholte*/
 #cubeState_Z .layer > div > div:nth-child(5) { background: var(--face5); }
 #cubeState_Z .layer > div > div:nth-child(6) { background: var(--face6); }
 
-
+}
 /* Bovenste laag draait om Y-as (U move) */
 @keyframes rotateTopLayer {
   from { transform: translateY(-70px) rotateY(  0deg)}
@@ -563,6 +567,16 @@ Code geschreven door Mitchell Scholte*/
   flex-wrap: wrap;
   gap: 8px;
   justify-content: center;
+}
+
+.controlPanel{
+  border-left: 3px solid black;
+  height: 100vh;
+  width: 100vw;
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
 #controls > label {
