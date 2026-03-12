@@ -2,9 +2,10 @@
 
 body {
   margin:0;
-  font-family:sans-serif;
   background:#222;
   color:white;
+  font-family: monospace;
+
   height: 100vh;
 }
 
@@ -30,6 +31,7 @@ h2 {
   text-align: center;
   
 }
+
 .cube{
 #scene {
   width: min(90vw, 90vh);
@@ -120,8 +122,9 @@ h2 {
   position: absolute;
   width: 60px;
   height: 60px;
+  border-radius: .5em;
   border: 1.5px solid rgb(0, 0, 0);
-  backface-visibility: hidden;
+  /* backface-visibility: hidden; */
 }
 
 .layer > div > div:nth-child(1) { transform: translateZ(30px); }
@@ -565,8 +568,8 @@ Code geschreven door Mitchell Scholte*/
   margin-top: 10px;
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
   gap: 8px;
-  justify-content: center;
 }
 
 .controlPanel{
@@ -659,21 +662,29 @@ Code geschreven door Mitchell Scholte*/
 
 }
 
-#controls > label {
+#controls div{
+  display: flex;
+  flex-direction: row;
+  gap: .4rem;
+}
+
+#controls div > label {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 38px;
-  height: 38px;
-  background: #444;
-  color: #fff;
+  width: 40px;
+  height: 40px;
+  background: #c0ff33;
+  color: #000;
   font-family: monospace;
-  font-size: 1rem;
-  border-radius: 6px;
+  font-size: .8rem;
+  border-radius: 2em;
   cursor: pointer;
   border: 2px solid #666;
+  margin-bottom: 2em;
   transition: background .15s, border-color .15s;
 }
+
 
 #controls > label:hover { background: #555; }
 
@@ -687,9 +698,9 @@ Code geschreven door Mitchell Scholte*/
 #sZ:checked ~ #controls label[for="sZ"],
 #sV:checked ~ #controls label[for="sV"]
  {
-  background: #5a5a5a;
+  background: #c0ff33;
   color: #000;
-  border-color: #575757;
+  border-color: #c0ff33;
 }
 
 input[type="radio"] {
@@ -698,4 +709,29 @@ input[type="radio"] {
   cursor: pointer;
   color: white;
   background-color: rgb(49, 49, 49);
+}
+
+.buttons{
+  display: flex;
+  gap: 1em;
+}
+
+a {
+  background-color: grey;
+  box-shadow: 0 5px 0 black;
+  color: #c0ff33;
+  padding: 1em 1.5em;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+a:hover {
+  background-color: #c0ff33;
+  color: black;
+}
+
+a:active {
+  box-shadow: none;
+  top: 5px;
 }
