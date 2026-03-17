@@ -28,8 +28,8 @@ h2 {
 }
 
 #scene {
-  width: min(90vw, 90vh);
-  height: min(90vw, 90vh);
+  width: min(90vw, 90vw);
+  height: min(90vh, 90vh);
   perspective: 1200px;
   z-index: 1;
 }
@@ -562,6 +562,7 @@ Code geschreven door Mitchell Scholte*/
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+  margin-bottom: 4em;
   justify-content: center;
 }
 
@@ -612,7 +613,7 @@ input[type="radio"] {
   position: relative;
   display: inline-block;
   width: 5em;
-  height: 2em;
+  height: 2.5em;
 }
 
 /* Hide default HTML checkbox */
