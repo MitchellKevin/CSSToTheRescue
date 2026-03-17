@@ -75,7 +75,7 @@ h2 {
 #sD:checked ~ #scene #cubeState_D { display: block; }
 #sE:checked ~ #scene #cubeState_E { display: block; }
 
-/* ===== LAYER WRAPPERS ===== */
+/* ===== LAYERs ===== */
 /* Elke layer is een 3D container op de juiste Y-positie */
 .layer {
   position: absolute;
@@ -92,7 +92,7 @@ h2 {
 .layer.center { transform: translateX(  0px); }
 .layer.right { transform: translateX( 70px); } */
 
-/* ===== CUBIES (div binnen layer) ===== */
+/* ===== CUBIES ===== */
 .layer > div {
   position: absolute;
   width: 90px;
