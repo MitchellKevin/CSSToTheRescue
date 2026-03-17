@@ -665,6 +665,7 @@ input[type="radio"] {
 
 .switch input:checked ~ .off {
   transform: translateX(1.9em);
+  opacity: 0;
 }
 
 .switch input:checked ~ .on {
