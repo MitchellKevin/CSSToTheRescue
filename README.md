@@ -84,3 +84,7 @@ transport ... protocol = vooral voor foutcontrole, UDP doet geen foutcontrole
 Mosaic 1993 > Netscape 1994 was hetzelfde als mosaic maar dan commercieel. > Internet Explorer 1995 en die was gratis > Opera 1995 was toen beter in CSS, maar waren niet helemaal cijfer en was betaald > IE 5 Mac 2000 > Konqueror werd later Safari> Safari 2003 heeft als rendering engine webkit > Firefox 2004 is een soort opvolger netscape 4 > Safari IOS 2007 eerst mobiel ecosysteem > Chrome 2008 apple wilde niks toevoegen aan webkit en was google hun eigen rendering engine gestart, wat blink was > Flow 2020 heeft een eigen rendering engine > ladybird 2024 > Igalia spaans opensource bedrijf, heeft grid bedacht, zijn geen browser maken maar heeft er wel veel verstand van. 
 
 worldwideweb.cern.ch laat de eerste website zien
+
+
+Custom Font inspo: 
+![alt text](/img/fontInspo.png)
