@@ -702,19 +702,19 @@ input[type="radio"] {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 26px;
+    font-size: 22px;
     font-weight: bold;
     color: white;
     border: 2px solid black;
   }
 
   /* Grey cube theme */
-  .front  { background: black; color: grey; transform: translateZ(12px); }
-  .back   { background: black; color: grey; transform: rotateY(180deg) translateZ(12px); }
-  .right  { background: black; color: grey; transform: rotateY(90deg) translateZ(12px); }
-  .left   { background: black; color: grey; transform: rotateY(-90deg) translateZ(12px); }
-  .top    { background: black; color: grey; transform: rotateX(90deg) translateZ(12px); }
-  .bottom { background: black; color: grey; transform: rotateX(-90deg) translateZ(12px); }
+  .front  { background: red; color: black; transform: translateZ(12px); }
+  .back   { background: orange; color: black; transform: rotateY(180deg) translateZ(12px); }
+  .right  { background: blue; color: black; transform: rotateY(90deg) translateZ(12px); }
+  .left   { background: green; color: black; transform: rotateY(-90deg) translateZ(12px); }
+  .top    { background: white; color: black; transform: rotateX(90deg) translateZ(12px); }
+  .bottom { background: yellow; color: black; transform: rotateX(-90deg) translateZ(12px); }
 
   @keyframes spin {
     0%   { transform: rotateX(0deg) rotateY(0deg); }
